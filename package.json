@@ -6,7 +6,9 @@
   "license": "MIT",
   "homepage": "https://github.com/livestax/theme",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/livestax/theme.git"
