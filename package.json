@@ -1,0 +1,14 @@
+{
+  "name": "livestax-theme",
+  "version": "0.0.1",
+  "description": "Theme for livestax",
+  "author": "Livestax",
+  "license": "MIT",
+  "homepage": "https://github.com/livestax/theme",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/livestax/theme.git"
+  }
+}
