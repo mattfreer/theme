@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     builddir: 'build',
     watch: {
-      files: ['index.html', 'variables.less'],
+      files: ['index.html', 'variables.less', 'overrides.less'],
       tasks: ['less'],
       options: {
         livereload: true,
