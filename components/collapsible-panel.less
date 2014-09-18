@@ -1,8 +1,4 @@
 .panel-collapsible-variant(@border-color, @text-color, @expanded-text-color) {
-  & > .panel-body {
-    border-top: 1px solid @border-color;
-  }
-
   & > .panel-heading {
     color: @expanded-text-color;
     &.collapsed {
@@ -12,6 +8,11 @@
 }
 
 .panel-collapsible {
+
+  .panel-body {
+    border-top: 1px solid;
+  }
+
   .panel-heading {
     cursor: pointer;
     border-bottom: 0;
