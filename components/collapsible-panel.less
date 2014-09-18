@@ -1,0 +1,64 @@
+.panel-collapsible-variant(@border-color, @text-color, @expanded-text-color) {
+  & > .panel-body {
+    border-top: 1px solid @border-color;
+  }
+
+  & > .panel-heading {
+    color: @expanded-text-color;
+    &.collapsed {
+      color: @text-color;
+    }
+  }
+}
+
+.panel-collapsible {
+  .panel-heading {
+    cursor: pointer;
+    border-bottom: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    &.collapsed {
+      background-color: @panel-bg;
+      &:hover {
+        background-color: @panel-default-heading-bg;
+      }
+    }
+  }
+
+  .panel-title:after {
+    font-family: FontAwesome;
+    content:"\f077";
+    float: right;
+  }
+  .collapsed .panel-title:after {
+    content:"\f078";
+  }
+}
+
+.panel-collapsible.panel-default {
+  .panel-collapsible-variant(@panel-default-border, @panel-primary-border, @panel-primary-border);
+}
+
+.panel-collapsible.panel-primary {
+  .panel-collapsible-variant(@panel-primary-border, @panel-primary-border, @panel-primary-text);
+}
+
+.panel-collapsible.panel-success {
+  .panel-collapsible-variant(@panel-success-border, @panel-success-border, @panel-success-text);
+}
+
+.panel-collapsible.panel-info {
+  .panel-collapsible-variant(@panel-info-border, @panel-info-border, @panel-info-text);
+}
+
+.panel-collapsible.panel-warning {
+  .panel-collapsible-variant(@panel-warning-border, @panel-warning-border, @panel-warning-text);
+}
+
+.panel-collapsible.panel-danger {
+  .panel-collapsible-variant(@panel-danger-border, @panel-danger-border, @panel-warning-text);
+}
