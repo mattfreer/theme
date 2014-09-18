@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-aws');
+  grunt.loadNpmTasks('grunt-invalidate-cloudfront');
 
   grunt.initConfig({
     aws: grunt.file.readJSON("grunt-aws.json"),
@@ -45,9 +46,23 @@ module.exports = function(grunt) {
         cwd: 'build/',
         src: 'theme.css'
       }
-    }
+    },
+    invalidate_cloudfront: {
+        options: {
+          key: '<%= aws.accessKeyId %>',
+          secret: '<%= aws.secretAccessKey %>',
+          distribution: '<%= aws.distribution %>'
+        },
+        development: {
+          files: [{
+            expand: true,
+            cwd: 'build/',
+            src: 'theme.css'
+          }]
+        }
+      }
   });
 
   grunt.registerTask('default', ['connect', 'watch']);
-  grunt.registerTask('release', ['less', 's3:development']);
+  grunt.registerTask('release', ['less', 's3:development', 'invalidate_cloudfront:development']);
 }
