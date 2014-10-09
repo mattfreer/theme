@@ -1,0 +1,62 @@
+.user-notice-variant(@text-color) {
+  & .user-notice-icon i {
+    color: @text-color;
+  }
+  & .user-notice-title {
+    color: @text-color;
+  }
+}
+
+.user-notice {
+  text-align:center;
+  padding-top:20px;
+
+  .user-notice-icon {
+    border-radius: 50%;
+    border: 1px solid @gray-lighter;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .user-notice-icon i {
+    font-size: 60px;
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+  }
+
+  .user-notice-text {
+    padding-top:22px
+  }
+
+  .user-notice-title {
+    font-size:19px;
+    font-weight:500;
+    margin-bottom:9px;
+  }
+}
+
+.user-notice.user-notice-default {
+  .user-notice-variant(@gray-dark);
+}
+
+.user-notice.user-notice-primary {
+  .user-notice-variant(@brand-primary);
+}
+
+.user-notice.user-notice-success {
+  .user-notice-variant(@brand-success);
+}
+
+.user-notice.user-notice-info {
+  .user-notice-variant(@brand-info);
+}
+
+.user-notice.user-notice-warning {
+  .user-notice-variant(@brand-warning);
+}
+
+.user-notice.user-notice-danger {
+  .user-notice-variant(@brand-danger);
+}
