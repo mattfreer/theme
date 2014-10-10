@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     aws: grunt.file.readJSON("grunt-aws.json"),
     builddir: 'build',
     watch: {
-      files: ['index.html', 'variables.less', 'overrides.less', 'components/*.less'],
+      files: ['index.html', 'variables.less', 'overrides.less', 'components/*.less', 'build.less'],
       tasks: ['less'],
       options: {
         livereload: true,
@@ -63,6 +63,6 @@ module.exports = function(grunt) {
       }
   });
 
-  grunt.registerTask('default', ['connect', 'watch']);
+  grunt.registerTask('default', ['connect', 'less', 'watch']);
   grunt.registerTask('release', ['less', 's3:development', 'invalidate_cloudfront:development']);
 }
