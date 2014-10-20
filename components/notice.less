@@ -1,0 +1,64 @@
+.notice-variant(@text-color) {
+  & .notice-icon i {
+    color: @text-color;
+  }
+  & .notice-title {
+    color: @text-color;
+  }
+}
+
+.notice {
+  text-align:center;
+  padding-top:20px;
+
+  .notice-icon {
+    border-radius: 50%;
+    border: 1px solid @gray-lighter;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .notice-icon i {
+    font-size: 60px;
+    position:relative;
+    top:50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .notice-text {
+    padding-top:22px
+  }
+
+  .notice-title {
+    font-size:19px;
+    font-weight:500;
+    margin-bottom:9px;
+  }
+}
+
+.notice.notice-default {
+  .notice-variant(@gray-dark);
+}
+
+.notice.notice-primary {
+  .notice-variant(@brand-primary);
+}
+
+.notice.notice-success {
+  .notice-variant(@brand-success);
+}
+
+.notice.notice-info {
+  .notice-variant(@brand-info);
+}
+
+.notice.notice-warning {
+  .notice-variant(@brand-warning);
+}
+
+.notice.notice-danger {
+  .notice-variant(@brand-danger);
+}
