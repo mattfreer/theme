@@ -1,0 +1,125 @@
+.media-badge-size(@dimension, @font-size, @top) {
+  .media-badge-container {
+    width: @dimension;
+    height: @dimension;
+    &.fa-stack {
+      font-size: @font-size;
+      .fa {
+        margin-top: @top;
+      }
+    }
+  }
+}
+
+.media-badge-inner-position(@padding, @bottom, @right) {
+  .media-badge-container {
+    &+span.badge {
+      position: absolute;
+      padding: @padding;
+      bottom: @bottom;
+      right: @right;
+    }
+  }
+}
+
+.media-badge-inner-style(@border-width, @font-size) {
+  .media-badge-container {
+    &+span.badge {
+      border: @border-width solid @component-active-color;
+      font-size: @font-size;
+      border-radius: 50%;
+    }
+  }
+}
+
+.media-badge-variant(@text-color) {
+  .media-badge-container i:first-child {
+    color: @text-color;
+  }
+}
+
+.media-badge-outline-variant(@border-color, @text-color) {
+  border: 1px solid @border-color;
+  .media-badge-container i:first-child {
+    color: transparent;
+  }
+
+  .media-badge-container i:last-child {
+    color: @text-color;
+  }
+}
+
+.media-badge {
+  position: relative;
+  display: inline-block;
+
+  .media-badge-size(72px, 2.8em, -5px);
+  .media-badge-inner-position(6px 8px, -2px, -3px);
+  .media-badge-inner-style(3px, 15px);
+}
+
+.media-badge-xs {
+  .media-badge-size(37px, 1.5em, -3px);
+  .media-badge-inner-position(3px 4px, -2px, -5px);
+  .media-badge-inner-style(2px, 70%);
+}
+
+.media-badge-sm {
+  .media-badge-size(49px, 1.9em, -3px);
+  .media-badge-inner-position(4px 6px, -2px, -4px);
+  .media-badge-inner-style(2px, 85%);
+}
+
+.media-badge-lg {
+  .media-badge-size(128px, 5em, -9px);
+  .media-badge-inner-position(8px 11px, 1px, -1px);
+  .media-badge-inner-style(3px, 130%);
+}
+
+.media-badge-default {
+  .media-badge-variant(@gray);
+}
+
+.media-badge-primary {
+  .media-badge-variant(@brand-primary);
+}
+
+.media-badge-success {
+  .media-badge-variant(@brand-success);
+}
+
+.media-badge-info {
+  .media-badge-variant(@brand-info);
+}
+
+.media-badge-warning {
+  .media-badge-variant(@brand-warning);
+}
+
+.media-badge-danger {
+  .media-badge-variant(@brand-danger);
+}
+
+.media-badge-default-inverse {
+  .media-badge-outline-variant(@gray-lighter, @gray);
+}
+
+.media-badge-primary-inverse {
+  .media-badge-outline-variant(@brand-primary, @brand-primary);
+}
+
+.media-badge-success-inverse {
+  .media-badge-outline-variant(@brand-success, @brand-success);
+}
+
+.media-badge-info-inverse {
+  .media-badge-outline-variant(@brand-info, @brand-info);
+}
+
+.media-badge-warning-inverse {
+  .media-badge-outline-variant(@brand-warning, @brand-warning);
+}
+
+.media-badge-danger-inverse {
+  .media-badge-outline-variant(@brand-danger, @brand-danger);
+}
