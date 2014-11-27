@@ -282,6 +282,30 @@ label {
   margin-bottom: 3px;
 }
 
+.list-group {
+  .form-inline {
+    margin-top: 1px;
+    border: 1px solid @brand-primary;
+
+    input {
+      border: none;
+      padding-right: 0px;
+      height: 37px;
+      width: ~"calc(100% - 120px)";
+    }
+
+    .btn {
+      padding: 4px 9px;
+    }
+  }
+
+  .form-group {
+    form:nth-of-type(n+2) {
+      margin-top: -1px;
+    }
+  }
+}
+
 // Navs  ====================================================================
 
 .tab-content {
