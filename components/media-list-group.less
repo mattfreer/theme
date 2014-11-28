@@ -1,6 +1,8 @@
-.list-group-media-container {
-  border: none;
+.list-group-media-item {
+  cursor: pointer;
+  text-decoration: none;
   padding: 16px;
+  border: none;
   border-bottom: 1px solid @gray-lighter;
 
   img {
@@ -34,25 +36,16 @@
       color: @gray;
     }
   }
-}
-
-.list-group-media-item {
-  cursor: pointer;
-  text-decoration: none;
 
   &:hover {
-    .list-group-media-container {
-      background-color: @gray-lightest;
-    }
+    background-color: @gray-lightest;
   }
 
   &.active {
-    .list-group-media-container {
-      background-color: @component-active-bg;
+    background-color: @component-active-bg;
+    color: @component-active-color;
+    h1, h2, h3, h4, h5, h6 {
       color: @component-active-color;
-      h1, h2, h3, h4, h5, h6 {
-        color: @component-active-color;
-      }
     }
   }
 }
