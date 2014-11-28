@@ -1,7 +1,9 @@
+@media-item-padding: 16px;
+
 .media-item {
   cursor: pointer;
   text-decoration: none;
-  padding: 16px;
+  padding: @media-item-padding;
 
   img {
     height: 49px;
@@ -10,6 +12,7 @@
   }
 
   .media-content {
+    .clearfix();
     margin-left: 65px;
 
     h1 {
@@ -47,5 +50,6 @@
 
 .list-group-item.media-item {
   border: none;
+  padding: @media-item-padding;
   border-bottom: 2px solid @gray-lighter;
 }
