@@ -1,3 +1,8 @@
+.media-badge-position() {
+  position: relative;
+  display: inline-block;
+}
+
 .media-badge-size(@dimension, @font-size, @top) {
   .media-badge-container {
     width: @dimension;
@@ -50,27 +55,28 @@
 }
 
 .media-badge {
-  position: relative;
-  display: inline-block;
-
+  .media-badge-position();
   .media-badge-size(72px, 2.8em, -5px);
   .media-badge-inner-position(6px 8px, -2px, -3px);
   .media-badge-inner-style(3px, 15px);
 }
 
 .media-badge-xs {
+  .media-badge-position();
   .media-badge-size(37px, 1.5em, -3px);
   .media-badge-inner-position(3px 4px, -2px, -5px);
   .media-badge-inner-style(2px, 70%);
 }
 
 .media-badge-sm {
+  .media-badge-position();
   .media-badge-size(49px, 1.9em, -3px);
   .media-badge-inner-position(4px 6px, -2px, -4px);
   .media-badge-inner-style(2px, 85%);
 }
 
 .media-badge-lg {
+  .media-badge-position();
   .media-badge-size(128px, 5em, -9px);
   .media-badge-inner-position(8px 11px, 1px, -1px);
   .media-badge-inner-style(3px, 130%);
