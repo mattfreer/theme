@@ -1,9 +1,7 @@
-.list-group-media-item {
+.media-item {
   cursor: pointer;
   text-decoration: none;
   padding: 16px;
-  border: none;
-  border-bottom: 1px solid @gray-lighter;
 
   img {
     height: 49px;
@@ -48,4 +46,9 @@
       color: @component-active-color;
     }
   }
+}
+
+.list-group-item.media-item {
+  border: none;
+  border-bottom: 2px solid @gray-lighter;
 }
