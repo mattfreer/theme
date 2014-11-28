@@ -1,9 +1,7 @@
-.list-group-media-item {
+.media-item {
   cursor: pointer;
   text-decoration: none;
   padding: 16px;
-  border: none;
-  border-bottom: 1px solid @gray-lighter;
 
   img {
     height: 49px;
@@ -19,21 +17,18 @@
       font-weight: 400;
       font-size: 15px;
       line-height: normal;
-      color: @gray-darker;
     }
 
     h2 {
       margin: 0 0 5px;
       font-weight: 500;
       font-size: 14px;
-      color: @brand-primary;
     }
 
     h3 {
       margin: 0 0 5px;
       font-weight: 400;
       font-size: 12px;
-      color: @gray;
     }
   }
 
@@ -48,4 +43,9 @@
       color: @component-active-color;
     }
   }
+}
+
+.list-group-item.media-item {
+  border: none;
+  border-bottom: 2px solid @gray-lighter;
 }
