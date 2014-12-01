@@ -1,17 +1,26 @@
-.media-badge-position() {
+.media-badge {
   position: relative;
   display: inline-block;
+
+  .media-badge-container {
+    vertical-align: middle;
+    line-height: 2em;
+  }
 }
 
 .media-badge-size(@dimension, @font-size, @top) {
   .media-badge-container {
+    display: block;
     width: @dimension;
     height: @dimension;
-    &.fa-stack {
-      font-size: @font-size;
-      .fa {
-        margin-top: @top;
-      }
+    font-size: @font-size;
+    .fa {
+      position: absolute;
+      margin-top: @top;
+      left: 0;
+      width: 100%;
+      line-height: inherit;
+      text-align: center;
     }
   }
 }
@@ -31,49 +40,41 @@
   .media-badge-container {
     &+span.badge {
       border: @border-width solid @component-active-color;
-      font-size: @font-size;
       border-radius: 50%;
+      font-size: @font-size;
     }
   }
 }
 
 .media-badge-variant(@text-color) {
-  .media-badge-container i:first-child {
-    color: @text-color;
-  }
+  background-color: @text-color;
 }
 
 .media-badge-outline-variant(@border-color, @text-color) {
   border: 1px solid @border-color;
   color: @text-color;
-  .media-badge-container i:first-child {
-    color: transparent;
-  }
+  background-color: transparent;
 }
 
 .media-badge {
-  .media-badge-position();
   .media-badge-size(72px, 2.8em, -5px);
   .media-badge-inner-position(6px 8px, -2px, -3px);
   .media-badge-inner-style(3px, 15px);
 }
 
 .media-badge-xs {
-  .media-badge-position();
   .media-badge-size(37px, 1.5em, -3px);
   .media-badge-inner-position(3px 4px, -2px, -5px);
   .media-badge-inner-style(2px, 70%);
 }
 
 .media-badge-sm {
-  .media-badge-position();
   .media-badge-size(49px, 1.9em, -3px);
   .media-badge-inner-position(4px 6px, -2px, -4px);
   .media-badge-inner-style(2px, 85%);
 }
 
 .media-badge-lg {
-  .media-badge-position();
   .media-badge-size(128px, 5em, -9px);
   .media-badge-inner-position(8px 11px, 1px, -1px);
   .media-badge-inner-style(3px, 130%);
