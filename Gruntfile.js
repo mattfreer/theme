@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-aws');
   grunt.loadNpmTasks('grunt-invalidate-cloudfront');
+  grunt.loadNpmTasks('grunt-shell');
 
   grunt.initConfig({
     aws: grunt.file.readJSON("grunt-aws.json"),
@@ -60,9 +61,28 @@ module.exports = function(grunt) {
             src: 'theme.css'
           }]
         }
+      },
+
+      shell: {
+        update_gh_pages: {
+          command: [
+            'git fetch upstream',
+            'git checkout upstream/gh-pages',
+            'git rebase upstream/master'
+          ].join('&&')
+        },
+        push_gh_pages: {
+          command: [
+            'git add .',
+            'git commit --amend -C HEAD',
+            'git push upstream +gh-pages -f',
+            'git checkout -'
+          ].join('&&')
+        }
       }
   });
 
   grunt.registerTask('default', ['connect', 'less', 'watch']);
   grunt.registerTask('release', ['less', 's3:development', 'invalidate_cloudfront:development']);
+  grunt.registerTask('gh-pages', ['shell:update_gh_pages', 'less', 'shell:push_gh_pages']);
 }
