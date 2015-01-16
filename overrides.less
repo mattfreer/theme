@@ -281,9 +281,31 @@ label {
 }
 
 .list-group {
+  &.form-list-group {
+    .has-error {
+      position: relative;
+    }
+  }
+
   .form-inline {
-    margin-top: 1px;
     border: 1px solid @brand-primary;
+
+    &:nth-of-type(n+2) {
+      margin-top: -1px;
+    }
+
+    &.has-error {
+      border: 1px solid @brand-danger;
+
+      .form-control:focus {
+        border: none;
+      }
+
+      .help-block {
+        padding: 0px 3px 3px 12px;
+        margin-bottom: 3px;
+      }
+    }
 
     input {
       display: inline-block;
@@ -295,12 +317,6 @@ label {
 
     .btn {
       padding: 4px 9px;
-    }
-  }
-
-  .form-group {
-    form:nth-of-type(n+2) {
-      margin-top: -1px;
     }
   }
 }
