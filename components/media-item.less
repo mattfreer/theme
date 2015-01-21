@@ -32,6 +32,11 @@
     background-color: @gray-lightest;
   }
 
+  &.unselectable:hover {
+    background-color: transparent;
+    cursor: default;
+  }
+
   &.active {
     background-color: @component-active-bg;
     color: @component-active-color !important;
