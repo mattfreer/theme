@@ -271,6 +271,13 @@ label {
   padding: 8px 12px;
 }
 
+a.list-group-item.unselectable {
+  &:hover, &:focus {
+    background-color: transparent;
+    cursor: default;
+  }
+}
+
 .list-group-item-heading {
   margin-top: 3px;
   margin-bottom: 5px;
