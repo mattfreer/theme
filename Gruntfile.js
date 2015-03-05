@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         update_gh_pages: {
           command: [
             'git fetch upstream',
-            'git checkout upstream/gh-pages',
+            'git checkout upstream/gh-pages -b gh-pages-deploy-temp',
             'git rebase upstream/master'
           ].join('&&')
         },
@@ -75,8 +75,9 @@ module.exports = function(grunt) {
           command: [
             'git add .',
             'git commit --amend -C HEAD',
-            'git push upstream +gh-pages -f',
-            'git checkout -'
+            'git push upstream gh-pages-deploy-temp:gh-pages -f',
+            'git checkout -',
+            'git branch -D gh-pages-deploy-temp'
           ].join('&&')
         }
       }
@@ -85,4 +86,4 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['connect', 'less', 'watch']);
   grunt.registerTask('release', ['less', 's3:development', 'invalidate_cloudfront:development']);
   grunt.registerTask('gh-pages', ['shell:update_gh_pages', 'less', 'shell:push_gh_pages']);
-}
+};
