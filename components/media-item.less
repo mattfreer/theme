@@ -1,57 +1,75 @@
 @media-item-padding: 16px;
+@media-item-pull-margin: 15px;
 
-.media-item {
-  cursor: pointer;
-  text-decoration: none;
-  padding: @media-item-padding;
+.media-list-group {
+  .list-group-item {
+    cursor: pointer;
+    text-decoration: none;
+    padding: @media-item-padding;
+    border: none;
+    border-bottom: 2px solid @gray-lighter;
 
-  img {
-    height: 49px;
-    width: 49px;
-  }
-
-  .media-content {
-    .clearfix();
-    margin-left: 65px;
-
-    h4 {
-      margin: 0 0 10px;
+    &:hover {
+      background-color: @gray-lightest;
     }
 
-    p {
-      margin: 0 0 5px;
-      line-height: 120%;
+    &.unselectable:hover {
+      background-color: transparent;
+      &.active:hover {
+        background-color: @component-active-bg;
+      }
+      cursor: default;
     }
 
-    h5 {
-      margin: 0 0 5px;
+    &.active {
+      background-color: @component-active-bg;
+      border-bottom: 2px solid @component-active-bg;
+
+      .media-content {
+        >* {
+          color: @component-active-color;
+        }
+      }
     }
-  }
 
-  &:hover {
-    background-color: @gray-lightest;
-  }
-
-  &.unselectable:hover {
-    background-color: transparent;
-    cursor: default;
-  }
-
-  &.active {
-    background-color: @component-active-bg;
-    color: @component-active-color !important;
-    h1, h2, h3, h4, h5, h6, p {
-      color: @component-active-color;
+    &:last-child {
+      border-bottom-width: 1px;
     }
-  }
-}
 
-.list-group-item.media-item {
-  border: none;
-  padding: @media-item-padding;
-  border-bottom: 2px solid @gray-lighter;
+    .pull-left {
+      margin-right: @media-item-pull-margin;
+    }
 
-  &.active {
-    border-bottom: 2px solid @component-active-bg;
+    .pull-right {
+      margin-left: @media-item-pull-margin;
+    }
+
+    .media-content {
+      overflow: hidden;
+      >* {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+    }
+
+    .line-normal {
+      margin-bottom: 5px;
+    }
+
+    .line-loose {
+      margin-bottom: 7px;
+    }
+
+    .line-looser {
+      margin-bottom: 10px;
+    }
+
+    .line-tight {
+      margin-bottom: 2px;
+    }
+
+    .line-tighter {
+      margin-bottom: 0px;
+    }
   }
 }
