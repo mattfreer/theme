@@ -5,9 +5,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-aws');
   grunt.loadNpmTasks('grunt-invalidate-cloudfront');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadTasks('./tasks');
 
   grunt.initConfig({
     aws: grunt.file.readJSON("grunt-aws.json"),
+    version: "0.0.1",
     builddir: 'build',
     watch: {
       files: ['index.html', 'variables.less', 'overrides.less', 'components/*.less', 'build.less'],
@@ -44,46 +46,37 @@ module.exports = function(grunt) {
         }
       },
       development: {
-        cwd: 'build/',
-        src: 'theme.css'
+        src: 'build/theme.css',
+        dest: 'theme-<%= version %>.css'
       }
     },
-    invalidate_cloudfront: {
-        options: {
-          key: '<%= aws.accessKeyId %>',
-          secret: '<%= aws.secretAccessKey %>',
-          distribution: '<%= aws.distribution %>'
-        },
-        development: {
-          files: [{
-            expand: true,
-            cwd: 'build/',
-            src: 'theme.css'
-          }]
-        }
-      },
 
-      shell: {
-        update_gh_pages: {
-          command: [
-            'git fetch upstream',
-            'git checkout upstream/gh-pages -b gh-pages-deploy-temp',
-            'git rebase upstream/master'
-          ].join('&&')
-        },
-        push_gh_pages: {
-          command: [
-            'git add .',
-            'git commit --amend -C HEAD',
-            'git push upstream gh-pages-deploy-temp:gh-pages -f',
-            'git checkout -',
-            'git branch -D gh-pages-deploy-temp'
-          ].join('&&')
-        }
+    shell: {
+      update_gh_pages: {
+        command: [
+          'git fetch upstream',
+          'git checkout upstream/gh-pages -b gh-pages-deploy-temp',
+          'git rebase upstream/master'
+        ].join('&&')
+      },
+      push_gh_pages: {
+        command: [
+          'git add .',
+          'git commit --amend -C HEAD',
+          'git push upstream gh-pages-deploy-temp:gh-pages -f',
+          'git checkout -',
+          'git branch -D gh-pages-deploy-temp'
+        ].join('&&')
       }
+    }
   });
 
+  var ticks = +new Date();
+  var s3Task = 's3' + ticks;
+
+  grunt.task.renameTask('s3', s3Task);
+
   grunt.registerTask('default', ['connect', 'less', 'watch']);
-  grunt.registerTask('release', ['less', 's3:development', 'invalidate_cloudfront:development']);
+  grunt.registerTask('release', ['less', 'checkVersion', s3Task + ':development']);
   grunt.registerTask('gh-pages', ['shell:update_gh_pages', 'less', 'shell:push_gh_pages']);
 };
