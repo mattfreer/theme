@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadTasks('./tasks');
 
-  grunt.initConfig({
+  var config = {
     aws: grunt.file.readJSON("grunt-aws.json"),
     version: "0.0.1",
     builddir: 'build',
@@ -69,10 +69,13 @@ module.exports = function(grunt) {
         ].join('&&')
       }
     }
-  });
+  };
 
   var ticks = +new Date();
   var s3Task = 's3' + ticks;
+
+  config[s3Task] = config.s3;
+  grunt.initConfig(config);
 
   grunt.task.renameTask('s3', s3Task);
 
