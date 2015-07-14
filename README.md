@@ -7,7 +7,7 @@ The theme extends Twitter [Bootstrap] to add components that meet common UI need
 
 The theme can be added to your App by simply including the following `<link>` tag to your app's source code:
 
-`<link href="//dz44vc6ose3il.cloudfront.net/theme-0.0.1.css" rel="stylesheet">`
+`<link href="//assets.livestax.com/theme-0.0.1.css" rel="stylesheet">`
 
 Please Note: Bootstrap CSS include is not required, as the [Theme] handles this dependency.
 
