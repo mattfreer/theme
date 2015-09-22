@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     version: "0.0.2-dev",
     builddir: 'build',
     watch: {
-      files: ['index.html', 'overrides/**/*.less', 'components/*.less', 'build.less'],
+      files: ['index.html', 'overrides/**/*.less', 'components/**/*.less', 'build.less'],
       tasks: ['less'],
       options: {
         livereload: true,
