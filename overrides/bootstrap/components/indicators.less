@@ -1,0 +1,38 @@
+// Indicators =================================================================
+
+.close {
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 0.5;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    color: @gray-lighter;
+  }
+}
+
+.alert {
+  border: none;
+
+  .alert-link {
+    text-decoration: underline;
+    color: #fff;
+  }
+}
+
+.alert h3 {
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.label {
+  border-radius: 0;
+  font-weight: 500;
+  font-size: @font-size-tiny;
+}
+
+.label-default {
+ color: @brand-primary;
+ background-color: @gray-lightest;
+}
