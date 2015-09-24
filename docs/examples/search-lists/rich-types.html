@@ -38,7 +38,7 @@
       </div>
 
       <script>
-        function searchListFilterRich(inputValue, listItems, listItemDecorator, querySelector, displayType) {
+        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
                 listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
@@ -64,11 +64,11 @@
 
         document.querySelector(".search-list-rich-types-content input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilterRich(inputValue, searchListRichContent_Items, richContent_Decorator, ".username", "block");
+          searchListFilter(inputValue, searchListRichContent_Items, richContent_Decorator, ".username", "block");
         }
 
         document.querySelector(".search-list-rich-types-content input[type=reset]").onclick = function() {
-          searchListFilterRich("", searchListRichContent_Items, richContent_Decorator, ".username", "block");
+          searchListFilter("", searchListRichContent_Items, richContent_Decorator, ".username", "block");
         }
       </script>
     </example>
@@ -121,7 +121,7 @@
       </div>
 
       <script>
-        function searchListFilterRich(inputValue, listItems, listItemDecorator, querySelector, displayType) {
+        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
                 listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
@@ -147,11 +147,11 @@
 
         document.querySelector(".search-list-rich-types-media input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilterRich(inputValue, searchListRichMedia_Items, richMedia_Decorator, ".username", "flex");
+          searchListFilter(inputValue, searchListRichMedia_Items, richMedia_Decorator, ".username", "flex");
         }
 
         document.querySelector(".search-list-rich-types-media input[type=reset]").onclick = function() {
-          searchListFilterRich("", searchListRichMedia_Items, richMedia_Decorator, ".username", "flex");
+          searchListFilter("", searchListRichMedia_Items, richMedia_Decorator, ".username", "flex");
         }
       </script>
     </example>
