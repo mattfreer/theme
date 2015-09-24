@@ -1,0 +1,13 @@
+{
+  "home": {
+    "overview": [],
+    "usage": []
+  },
+  "styles": {
+    "typography": [
+      "headings",
+      "body-text",
+      "body-modifiers"
+    ]
+  }
+}

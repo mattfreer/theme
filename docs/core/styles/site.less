@@ -1,0 +1,180 @@
+@import "../../../overrides/bootstrap/variables.less";
+
+body {
+  position: relative;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.navbar-inverse {
+  border: none;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: inherit;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 120px;
+}
+
+.page-header {
+  border: none;
+}
+
+h1.page-header {
+  font-size: 36px;
+  font-weight: 300;
+  border-bottom: 1px solid @gray-lighter;
+}
+
+h2.page-header {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 45px 0px 0px;
+}
+
+h3.page-header {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 20px 0px 0px;
+}
+
+h4.page-header {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 15px 0px 5px;
+}
+
+h5.page-header {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+h6.page-header {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.ls-component {
+  position: relative;
+  padding: 5px 15px;
+  border: 1px solid @gray-lighter;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+
+  &::before {
+    content: "example";
+    text-transform: uppercase;
+    background-color: @gray;
+    color: #FFFFFF;
+    padding: 1px 5px;
+    display: block;
+    width: 73px;
+    height: 19px;
+    margin: 10px 0px;
+  }
+
+  &::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    margin-bottom: 10px;
+  }
+}
+
+#source-button {
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:100;
+  font-weight:700;
+}
+
+#source-modal .close {
+  color: @gray-darker;
+}
+
+main:focus {
+  outline: none;
+}
+
+
+.ls-docs-masthead,
+.ls-docs-header {
+  position: relative;
+  padding: 30px 0;
+  color: #FFFFFF;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  background-color: @brand-primary;
+
+  h1 {
+    font-weight: 300;
+    line-height: 1;
+    color: #FFFFFF;
+  }
+}
+
+@media (min-width: 768px) {
+  .ls-docs-masthead {
+    padding: 80px 0;
+
+    h1 {
+      font-size: 60px;
+    }
+  }
+}
+
+.ls-docs-header {
+  margin-bottom: 40px;
+  font-size: 20px;
+
+  h1 {
+    margin-top: 0;
+    color: #FFFFFF;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .container {
+    position: relative;
+  }
+}
+
+@media (min-width: 768px) {
+  .ls-docs-header {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 24px;
+    text-align: left;
+
+    h1 {
+      font-size: 60px;
+      line-height: 1;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .ls-docs-header h1,
+  .ls-docs-header p {
+    margin-right: 380px;
+  }
+}
