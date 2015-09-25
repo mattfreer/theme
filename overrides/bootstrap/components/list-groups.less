@@ -2,6 +2,15 @@
 
 .list-group-item {
   padding: 8px 12px;
+  margin-bottom: 0px;
+}
+
+.list-group-item {
+  border-top: none;
+
+  &:first-child {
+    border-top: 1px solid @gray-lighter;
+  }
 }
 
 a.list-group-item.unselectable {
