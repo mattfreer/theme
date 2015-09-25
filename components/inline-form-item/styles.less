@@ -1,0 +1,64 @@
+.inline-form-item {
+  .form-inline {
+    .help-block {
+      padding: 3px 2px 3px 1px;
+      margin-bottom: 3px;
+    }
+
+    .btn {
+      padding: 4px 9px;
+    }
+
+    input {
+      &.form-control {
+        display: inline-block;
+        box-shadow: none;
+        padding-right: 0px;
+        height: 37px;
+        width: ~"calc(100% - 115px)";
+      }
+    }
+  }
+}
+
+.list-group-item {
+  &.inline-form-item {
+    border: none;
+    padding: 0;
+
+    .form-inline {
+      border: 1px solid @brand-primary;
+      border-bottom: none;
+
+      &.has-error {
+        border: 1px solid @brand-danger;
+        border-bottom: none;
+      }
+
+      .help-block {
+        padding: 0px 3px 3px 12px;
+      }
+
+      input {
+        &.form-control {
+          border: none;
+          width: ~"calc(100% - 120px)";
+        }
+      }
+
+      .form-control:focus {
+        border: none;
+      }
+    }
+
+    &:last-child {
+      .form-inline {
+        border-bottom: 1px solid @brand-primary;
+
+        &.has-error {
+          border-bottom: 1px solid @brand-danger;
+        }
+      }
+    }
+  }
+}
