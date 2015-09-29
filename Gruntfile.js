@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     version: "0.0.2-dev",
     builddir: 'build',
     watch: {
-      files: ['public/index.html', 'overrides/**/*.less', 'components/**/*.less', 'build.less'],
+      files: ['docs/**/*.*', 'overrides/**/*.less', 'components/**/*.less', 'build.less'],
       tasks: ['less'],
       options: {
         livereload: true,
@@ -30,7 +30,8 @@ module.exports = function(grunt) {
     less: {
       development: {
         files: {
-          "build/theme.css": "build.less"
+          "build/theme.css": "build.less",
+          "public/css/site.css": "docs/core/styles/site.less"
         }
       }
     },
@@ -79,7 +80,10 @@ module.exports = function(grunt) {
 
   grunt.task.renameTask('s3', s3Task);
 
-  grunt.registerTask('default', ['connect', 'less', 'watch']);
+  grunt.loadTasks('tasks');
+
+  grunt.registerTask('default', ['connect', 'less', 'buildDocs', 'watch']);
+  grunt.registerTask('build-docs', ['buildDocs']);
   grunt.registerTask('release', ['less', 'checkVersion', s3Task + ':development']);
   grunt.registerTask('gh-pages', ['shell:update_gh_pages', 'less', 'shell:push_gh_pages']);
 };

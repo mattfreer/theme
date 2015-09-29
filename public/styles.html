@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Livestax Theme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../build/theme.css">
+    <link rel="stylesheet" href="css/site.css">
+  </head>
+  <body>
+    <header class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header navbar-inverse">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#ls-navbar" aria-controls="ls-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="home.html" class="navbar-brand"><img src="../fixtures/images/livestax_logo.png" alt="Livestax"></a>
+        </div>
+        <nav id="ls-navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="text-capitalize"><a href="home.html">home</a></li><li class="text-capitalize active"><a href="styles.html">styles</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="content ls-docs-header" role="main" tabindex="-1">
+<!--Header Start-->
+<div class="ls-docs-header" id="content" tabindex="-1">
+  <div class="container">
+    <h1 class='text-capitalize'>Styles</h1>
+<p>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes.</p>
+
+  </div>
+</div>
+<!--Header End-->
+<div class="container ls-docs-container">
+  <div class="row">
+    <!--contents start-->
+    <div class="col-md-9" role="main">
+      <!-- typography Start-->
+      <div class="ls-docs-section typography">
+        <h1 id="typography" class="page-header text-capitalize">
+          <a href="#typography"></a>
+          typography
+        </h1>
+<!-- typography-headings Start-->
+<div class="ls-docs-section typography-headings">
+  <h2 id="typography-headings" class="page-header text-capitalize">
+    <a href="#typography-headings"></a>
+    headings
+  </h2>
+  <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
+<h3 class='page-header text-capitalize'>Normal</h3>
+<div class='ls-component'>
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+</div>
+<h3 class='page-header text-capitalize'>Strong</h3>
+<div class='ls-component'>
+  <h1><strong>Heading 1</strong></h1>
+  <h2><strong>Heading 2</strong></h2>
+  <h3><strong>Heading 3</strong></h3>
+  <h4><strong>Heading 4</strong></h4>
+  <h5><strong>Heading 5</strong></h5>
+  <h6><strong>Heading 6</strong></h6>
+</div>
+<h3 class='page-header text-capitalize'>Emphasized</h3>
+<div class='ls-component'>
+  <h1><em>Heading 1</em></h1>
+  <h2><em>Heading 2</em></h2>
+  <h3><em>Heading 3</em></h3>
+  <h4><em>Heading 4</em></h4>
+  <h5><em>Heading 5</em></h5>
+  <h6><em>Heading 6</em></h6>
+</div>
+
+</div>
+<!-- typography-headings End-->
+<!-- typography-body-text Start-->
+<div class="ls-docs-section typography-body-text">
+  <h2 id="typography-body-text" class="page-header text-capitalize">
+    <a href="#typography-body-text"></a>
+    body text
+  </h2>
+  <p>All standard text within the <code>&lt;body&gt;</code> has a consistent design.</p>
+<div class='ls-component'>
+  <p class="lead">This paragraph stands out as it is the lead text</p>
+  <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+  <p><small>This line of text is meant to be treated as fine print.</small></p>
+  <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+  <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+  <p>The following snippet of text is <mark>highlighted text</mark>.</p>
+</div>
+
+</div>
+<!-- typography-body-text End-->
+<!-- typography-body-modifiers Start-->
+<div class="ls-docs-section typography-body-modifiers">
+  <h2 id="typography-body-modifiers" class="page-header text-capitalize">
+    <a href="#typography-body-modifiers"></a>
+    body modifiers
+  </h2>
+  <h3 class='page-header text-capitalize'>Status Colours</h3>
+<p>Applying a class of <code>.text-muted</code> <code>.text-primary</code> <code>.text-warning</code> <code>.text-danger</code> <code>.text-success</code> <code>.text-info</code> to an element will change the colour of the text to the required status colour.</p>
+<div class='ls-component'>
+  <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+  <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+  <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+  <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+  <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+  <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+</div>
+<h3 class='page-header text-capitalize'>De-emphasized</h3>
+<p>Applying a class of <code>.text-weaker</code> to an element will reduce the weight of the font to a lighter style.</p>
+<div class='ls-component'>
+  <p class="text-muted text-weaker">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+  <p class="text-primary text-weaker">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+  <p class="text-warning text-weaker">Etiam porta sem malesuada magna mollis euismod.</p>
+  <p class="text-danger text-weaker">Donec ullamcorper nulla non metus auctor fringilla.</p>
+  <p class="text-success text-weaker">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+  <p class="text-info text-weaker">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+</div>
+
+</div>
+<!-- typography-body-modifiers End-->
+      </div>
+      <!-- typography End-->
+    </div>
+  </div>
+</div>
+    </main>
+    <!--Source Modal Start-->
+    <div id="source-modal" class="modal fade">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Source Code</h4>
+          </div>
+          <div class="modal-body">
+            <pre></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Source Modal End-->
+    <footer>
+    </footer>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>
