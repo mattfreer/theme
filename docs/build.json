@@ -7,7 +7,26 @@
     "typography": [
       "headings",
       "body-text",
-      "body-modifiers"
+      "body-modifiers",
+      "transformations",
+      "block-quotes"
+    ],
+    "buttons": [
+      "standard",
+      "inverse",
+      "disabled",
+      "size-variants"
+    ],
+    "tables": [
+      "basic",
+      "striped",
+      "bordered",
+      "hover-rows"
+    ],
+    "forms": [
+      "input",
+      "select",
+      "field-status"
     ]
   }
 }
