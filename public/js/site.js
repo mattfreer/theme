@@ -1,5 +1,7 @@
 $(document).ready(function() {
   prepareViewSourceBtn();
+  affixSideMenu();
+  activateSideMenuLinks();
 });
 
 function prepareViewSourceBtn() {
@@ -42,4 +44,35 @@ function cleanSource(html) {
   lines = lines.join("\n");
 
   return lines;
+}
+
+function affixSideMenu() {
+  var $sideBar = $('.ls-docs-sidebar');
+
+  $sideBar.affix({
+    offset: {
+      top: function () {
+        var offsetTop = $sideBar.offset().top;
+        var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10);
+        var navOuterHeight = $('.ls-docs-nav').height();
+
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin);
+      },
+      bottom: function () {
+        return (this.bottom = $('.ls-docs-footer').outerHeight(true));
+      }
+    }
+  });
+
+  $('.ls-top').affix();
+}
+
+function activateSideMenuLinks() {
+  $('.ls-docs-sidebar ul.nav li').click(function() {
+    $('.ls-docs-sidebar ul.nav li').removeClass("active");
+    $(this).addClass("active");
+  });
+  $('.back-to-top').click(function() {
+    $('.ls-docs-sidebar ul.nav li').removeClass("active");
+  });
 }

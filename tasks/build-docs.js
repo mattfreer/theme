@@ -54,6 +54,9 @@ module.exports = function(grunt) {
     var docsSectionBlockTitleTemplate = readFile("core/docs-section-block-title.html");
     var docsSectionBlockExampleTemplate = readFile("core/docs-section-block-example.html");
 
+    var docsSideMenuTemplate = readFile("core/docs-menu.html");
+    var docsSideMenuItemTemplate = readFile("core/docs-menu-item.html");
+
     for(var pageName in buildScript) {
       var pageFileName, mainMenuContent, pageContent, pageOutput;
 
@@ -86,6 +89,8 @@ module.exports = function(grunt) {
 
       pageOutput += docsPageHeaderTemplate;
 
+      var menuItems = "";
+
       //loop through each content section for page
       for(var sectionName in pageContent) {
         var blockContents = pageContent[sectionName];
@@ -101,6 +106,8 @@ module.exports = function(grunt) {
                         .replace(/\$Body\$/g, readFile(pageBlocksPath + "index.html"));
         }
 
+        var subMenuItems = "";
+        //loop through each block for the section (a block is the .html within the section directory)
         for(var i = 0; i < blockContents.length; i++) {
           var pageBlockName = blockContents[i];
           var pageBlockDataBody = readFile(pageBlocksPath + pageBlockName + ".html")
@@ -116,11 +123,34 @@ module.exports = function(grunt) {
 
           pageOutput += docsSectionBlockFooterTemplate
                         .replace(/\$FullTitle\$/g, sectionName + "-" + pageBlockName)
+
+          var subMenuItem = docsSideMenuItemTemplate
+                           .replace(/\$MenuLink\$/g, sectionName + "-" + pageBlockName)
+                           .replace(/\$MenuTitle\$/g, cleanTitle(pageBlockName))
+                           .replace(/\$SubMenu\$/g, "");
+
+          subMenuItems += subMenuItem;
         }
 
         pageOutput += docsSectionFooterTemplate.replace(/\$Title\$/g, sectionName);
+
+        //Add to top side menu here
+        var subMenu = docsSideMenuTemplate
+                      .replace(/\$MenuItems\$/g, subMenuItems);
+        var menuItem = docsSideMenuItemTemplate
+                       .replace(/\$MenuLink\$/g, sectionName)
+                       .replace(/\$MenuTitle\$/g, cleanTitle(sectionName))
+                       .replace(/\$SubMenu\$/g, subMenu);
+
+        menuItems += menuItem;
       }
-      pageOutput += docsPageFooterTemplate;
+
+      var sideMenu = docsSideMenuTemplate
+                     .replace(/\$MenuItems\$/g, menuItems);
+
+      pageOutput += docsPageFooterTemplate
+                    .replace(/\$SideMenu\$/g, sideMenu);
+
       pageOutput += footerTemplate;
 
       fs.writeFile(outputDir + pageFileName, pageOutput, function(err) {});
