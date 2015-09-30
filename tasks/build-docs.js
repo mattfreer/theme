@@ -44,6 +44,8 @@ module.exports = function(grunt) {
     var footerTemplate = readFile("core/footer.html", true);
     var pageTitleTemplate = readFile("core/banner.html");
 
+    var docsPageHeaderTemplate = readFile("core/docs-page-header.html");
+    var docsPageFooterTemplate = readFile("core/docs-page-footer.html");
     var docsSectionHeaderTemplate = readFile("core/docs-section-header.html");
     var docsSectionFooterTemplate = readFile("core/docs-section-footer.html");
     var docsSectionBodyTemplate = readFile("core/docs-section-body.html");
@@ -82,6 +84,8 @@ module.exports = function(grunt) {
       pageOutput += pageTitleTemplate
                     .replace(/\$Body\$/g, pageTitleData);
 
+      pageOutput += docsPageHeaderTemplate;
+
       //loop through each content section for page
       for(var sectionName in pageContent) {
         var blockContents = pageContent[sectionName];
@@ -116,7 +120,7 @@ module.exports = function(grunt) {
 
         pageOutput += docsSectionFooterTemplate.replace(/\$Title\$/g, sectionName);
       }
-
+      pageOutput += docsPageFooterTemplate;
       pageOutput += footerTemplate;
 
       fs.writeFile(outputDir + pageFileName, pageOutput, function(err) {});
