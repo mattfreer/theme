@@ -33,6 +33,12 @@
     "navs": [
       "tabs"
     ],
+    "media-badge": [
+      "image-badge",
+      "font-badge",
+      "filled-badge",
+      "outlined-badge"
+    ],
     "collapsible-panel": [
       "basic",
       "header"
