@@ -42,15 +42,20 @@
       "labels",
       "badges"
     ],
-    "panels": [
-      "basic",
-      "contextual"
-    ],
     "media-badge": [
       "image-badge",
       "font-badge",
       "filled-badge",
       "outlined-badge"
+    ],
+    "list-groups": [
+      "basic",
+      "badge",
+      "content"
+    ],
+    "panels": [
+      "basic",
+      "contextual"
     ],
     "collapsible-panel": [
       "basic",
