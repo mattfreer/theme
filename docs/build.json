@@ -28,5 +28,14 @@
       "select",
       "field-status"
     ]
+  },
+  "components": {
+    "navs": [
+      "tabs"
+    ],
+    "collapsible-panel": [
+      "basic",
+      "header"
+    ]
   }
 }
