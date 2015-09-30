@@ -31,7 +31,20 @@
   },
   "components": {
     "navs": [
-      "tabs"
+      "tabs",
+      "pills",
+      "breadcrumbs",
+      "pagination",
+      "pager"
+    ],
+    "indicators": [
+      "alerts",
+      "labels",
+      "badges"
+    ],
+    "panels": [
+      "basic",
+      "contextual"
     ],
     "media-badge": [
       "image-badge",
@@ -42,6 +55,9 @@
     "collapsible-panel": [
       "basic",
       "header"
+    ],
+    "notice": [
+      "contextual"
     ]
   }
 }
