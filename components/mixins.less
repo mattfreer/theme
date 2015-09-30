@@ -1,0 +1,21 @@
+.display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.align-items(@align) {
+  -ms-flex-align: @align;
+  -webkit-align-items: @align;
+  -webkit-box-align: @align;
+  align-items: @align;
+}
+
+.justify-content(@justify: flex-start) {
+  -webkit-justify-content: @justify;
+  -moz-justify-content: @justify;
+  -ms-justify-content: @justify;
+  justify-content: @justify;
+}
+
