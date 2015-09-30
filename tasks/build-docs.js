@@ -88,7 +88,9 @@ module.exports = function(grunt) {
         var pageBlocksPath = pageName + "/" + sectionName + "/";
 
         //Build section h1 and optional introduction body content
-        pageOutput += docsSectionHeaderTemplate.replace(/\$Title\$/g, cleanTitle(sectionName));
+        pageOutput += docsSectionHeaderTemplate
+                      .replace(/\$Title\$/g, sectionName)
+                      .replace(/\$DisplayTitle\$/g, cleanTitle(sectionName));
 
         if (fileExists(sourceDir + pageBlocksPath + "index.html")) {
           pageOutput += docsSectionBodyTemplate
@@ -104,8 +106,8 @@ module.exports = function(grunt) {
                                   .replace(/<\/example>/g, "</div>");
 
           pageOutput += docsSectionBlockHeaderTemplate
-                        .replace(/\$FullTitle\$/g, sectionName + "-" + pageBlockName)
-                        .replace(/\$Title\$/g, cleanTitle(pageBlockName))
+                        .replace(/\$Title\$/g, sectionName + "-" + pageBlockName)
+                        .replace(/\$DisplayTitle\$/g, cleanTitle(pageBlockName))
                         .replace(/\$Body\$/g, pageBlockDataBody);
 
           pageOutput += docsSectionBlockFooterTemplate
