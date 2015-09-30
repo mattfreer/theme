@@ -53,6 +53,10 @@
       "badge",
       "content"
     ],
+    "inline-form-item": [
+      "individual",
+      "list"
+    ],
     "panels": [
       "basic",
       "contextual"
