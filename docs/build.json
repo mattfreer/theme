@@ -61,6 +61,10 @@
       "individual",
       "list"
     ],
+    "dropdown-item": [
+      "individual",
+      "list"
+    ],
     "panels": [
       "basic",
       "contextual"
