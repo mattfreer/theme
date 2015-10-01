@@ -111,7 +111,6 @@ main:focus {
   outline: none;
 }
 
-
 .ls-docs-masthead,
 .ls-docs-header {
   position: relative;
@@ -125,16 +124,6 @@ main:focus {
     font-weight: 300;
     line-height: 1;
     color: #FFFFFF;
-  }
-}
-
-@media (min-width: 768px) {
-  .ls-docs-masthead {
-    padding: 80px 0;
-
-    h1 {
-      font-size: 60px;
-    }
   }
 }
 
@@ -158,7 +147,69 @@ main:focus {
   }
 }
 
+.ls-docs-sidebar.affix {
+  position: static;
+}
+
+.ls-docs-sidebar {
+  margin-top: 35px;
+
+  ul > li {
+    > a {
+      padding: 4px 12px;
+      font-weight: 500;
+    }
+
+    &.active {
+      border-left: 2px solid @brand-primary;
+
+      ul > li {
+        display: block;
+      }
+    }
+  }
+
+  ul > li > ul > li {
+    display: none;
+    a {
+      font-size: 13px;
+      padding: 3px 25px;
+      color: @gray-dark;
+      font-weight: 400;
+    }
+  }
+}
+
+.back-to-top {
+  display: none;
+  padding: 4px 10px;
+  margin-top: 20px;
+  margin-left: 17px;
+  font-size: 13px;
+  font-weight: 500;
+  color: @gray;
+
+  &:hover {
+    color: @brand-primary;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:active, {
+    color: @gray;
+    text-decoration: none;
+  }
+}
+
 @media (min-width: 768px) {
+  .ls-docs-masthead {
+    padding: 80px 0;
+
+    h1 {
+      font-size: 60px;
+    }
+  }
+
   .ls-docs-header {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -170,11 +221,39 @@ main:focus {
       line-height: 1;
     }
   }
+
+  .ls-docs-sidebar {
+    padding-left: 20px;
+  }
+
+  .back-to-top {
+    display: block;
+  }
 }
 
 @media (min-width: 992px) {
   .ls-docs-header h1,
   .ls-docs-header p {
     margin-right: 380px;
+  }
+
+  .ls-docs-sidebar {
+    &.affix {
+      width: 213px;
+      position: fixed;
+      top: 20px;
+    }
+
+    &.affix-bottom {
+      width: 213px;
+      position: absolute;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .ls-docs-sidebar.affix-bottom,
+  .ls-docs-sidebar.affix {
+    width: 263px;
   }
 }
