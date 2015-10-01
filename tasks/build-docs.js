@@ -153,7 +153,7 @@ module.exports = function(grunt) {
 
       pageOutput += footerTemplate;
 
-      fs.writeFile(outputDir + pageFileName, pageOutput, function(err) {});
+      fs.writeFileSync(outputDir + pageFileName, pageOutput);
     }
   });
 };
