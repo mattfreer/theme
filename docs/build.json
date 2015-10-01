@@ -75,6 +75,10 @@
     ],
     "notice": [
       "contextual"
+    ],
+    "progress-indicator": [
+      "simple",
+      "composition"
     ]
   }
 }
