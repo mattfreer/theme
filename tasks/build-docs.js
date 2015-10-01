@@ -101,6 +101,7 @@ module.exports = function(grunt) {
       //generate page banner content
       var pageTitleData = readFile(pageName + "/banner.html")
                           .replace(/<title>/g, "<h1 class='text-capitalize'>")
+                          .replace(/<version\/>/g, version)
                           .replace(/<\/title>/g, "</h1>");
       pageOutput += pageTitleTemplate
                     .replace(/\$Body\$/g, pageTitleData);
@@ -121,7 +122,8 @@ module.exports = function(grunt) {
 
         if (fileExists(sourceDir + pageBlocksPath + "index.html")) {
           pageOutput += docsSectionBodyTemplate
-                        .replace(/\$Body\$/g, readFile(pageBlocksPath + "index.html"));
+                          .replace(/\$Body\$/g, readFile(pageBlocksPath + "index.html"))
+                          .replace(/<version\/>/g, version);
         }
 
         var subMenuItems = "";
