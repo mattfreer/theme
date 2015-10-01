@@ -1,0 +1,59 @@
+.tile-grid {
+  .row {
+    color: @gray-darker;
+    margin: 0;
+
+    &.row-eq-height {
+      .display-flex
+    }
+  }
+
+  .tile {
+    padding: 30px 15px;
+    border-bottom: 1px solid @gray-lighter;
+    border-right: 1px solid @gray-lighter;
+
+    &:last-child, &:only-child {
+      border-right: none;
+    }
+
+    &.tile-layout {
+      .display-flex;
+      .align-items(center);
+      .justify-content(center);
+    }
+
+    & > .row {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .tile-content {
+      display: inline-block;
+
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+      }
+    }
+
+    .tile-media {
+      & > * {
+        margin: 0 0.5em;
+      }
+    }
+
+    [class^="col"] {
+      padding: 0;
+    }
+  }
+
+  [class^="col"] {
+    &.no-gutter {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
