@@ -25,17 +25,17 @@ footer {
   border: none;
 }
 h1.page-header {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 300;
   border-bottom: 1px solid #e8e8e8;
 }
 h2.page-header {
   font-size: 30px;
   font-weight: 300;
-  margin: 45px 0px 0px;
+  margin: 25px 0px 0px;
 }
 h3.page-header {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   margin: 20px 0px 0px;
 }
@@ -56,17 +56,17 @@ h6.page-header {
   position: relative;
   padding: 5px 15px;
   border: 1px solid #e8e8e8;
-  border-radius: 10px;
-  border-top-right-radius: 0;
+  margin-bottom: 36px;
 }
 .ls-component::before {
   content: "example";
   text-transform: uppercase;
-  background-color: #aaaaaa;
-  color: #FFFFFF;
-  padding: 1px 5px;
+  border: 1px solid #e8e8e8;
+  color: #aaaaaa;
+  padding: 1px 6px;
   display: block;
-  width: 73px;
+  width: 67px;
+  font-size: 12px;
   height: 19px;
   margin: 10px 0px;
 }
@@ -75,17 +75,35 @@ h6.page-header {
   display: block;
   height: 0;
   clear: both;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 #source-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
+  padding: 2px 10px;
   z-index: 100;
   font-weight: 700;
 }
-#source-modal .close {
+#source-modal .modal-header {
+  padding: 15px 20px 0px 20px;
+  border-bottom: none;
+}
+#source-modal .modal-header h4 {
+  font-weight: 300;
+  font-size: 20px;
+}
+#source-modal .modal-header .close {
   color: #323232;
+  margin-top: 4px;
+}
+#source-modal .modal-body {
+  padding: 12px 20px 10px 20px;
+}
+#source-modal .modal-body pre {
+  color: #848484;
+  border: 1px solid #e8e8e8;
+  background-color: #f7f7f7;
 }
 main:focus {
   outline: none;
@@ -98,6 +116,10 @@ main:focus {
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #15a4fa;
+}
+.ls-docs-masthead:focus,
+.ls-docs-header:focus {
+  outline: none;
 }
 .ls-docs-masthead h1,
 .ls-docs-header h1 {
@@ -116,10 +138,13 @@ main:focus {
 .ls-docs-header p {
   margin-bottom: 0;
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 .ls-docs-header .container {
   position: relative;
+}
+.ls-docs-container {
+  padding-bottom: 10px;
 }
 .ls-docs-sidebar.affix {
   position: static;
@@ -169,12 +194,12 @@ main:focus {
     padding: 80px 0;
   }
   .ls-docs-masthead h1 {
-    font-size: 60px;
+    font-size: 50px;
   }
   .ls-docs-header {
     padding-top: 60px;
     padding-bottom: 60px;
-    font-size: 24px;
+    font-size: 22px;
     text-align: left;
   }
   .ls-docs-header h1 {
