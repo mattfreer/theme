@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     }
 
     var done = this.async();
-    var s3Opts = grunt.config.get("s3.options");
+    var s3Opts = grunt.config.get("s3.cdn.options");
     AWS.config.update(_.pick(s3Opts,
       'accessKeyId',
       'secretAccessKey',
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     ), true);
 
     var S3 = new AWS.S3();
-    var dest = grunt.config.get("s3.development.dest");
+    var dest = grunt.config.get("s3.cdn.dest");
 
     S3.getObject({
       Bucket: s3Opts.bucket,

@@ -4,7 +4,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-aws');
   grunt.loadNpmTasks('grunt-invalidate-cloudfront');
-  grunt.loadNpmTasks('grunt-shell');
   grunt.loadTasks('./tasks');
 
   var config = {
@@ -31,43 +30,38 @@ module.exports = function(grunt) {
       development: {
         files: {
           "build/theme.css": "build.less",
+          "public/vendor/css/theme.css": "build.less",
           "public/css/site.css": "docs/core/styles/site.less"
         }
       }
     },
     s3: {
       options: {
-        accessKeyId: '<%= aws.accessKeyId %>',
-        secretAccessKey: '<%= aws.secretAccessKey %>',
-        bucket: '<%= aws.bucket %>',
-        region: '<%= aws.region %>',
         access: 'public-read',
+        cache: false,
         headers: {
           CacheControl: "max-age=630720000, public",
         }
       },
-      development: {
+      cdn: {
+        options: {
+          accessKeyId: '<%= aws.cdn.accessKeyId %>',
+          secretAccessKey: '<%= aws.cdn.secretAccessKey %>',
+          bucket: '<%= aws.cdn.bucket %>',
+          region: '<%= aws.cdn.region %>'
+        },
         src: 'build/theme.css',
         dest: 'theme-<%= version %>.css'
-      }
-    },
-
-    shell: {
-      update_gh_pages: {
-        command: [
-          'git fetch upstream',
-          'git checkout upstream/gh-pages -b gh-pages-deploy-temp',
-          'git rebase upstream/master'
-        ].join('&&')
       },
-      push_gh_pages: {
-        command: [
-          'git add .',
-          'git commit --amend -C HEAD',
-          'git push upstream gh-pages-deploy-temp:gh-pages -f',
-          'git checkout -',
-          'git branch -D gh-pages-deploy-temp'
-        ].join('&&')
+      documentation: {
+        options: {
+          accessKeyId: '<%= aws.documentation.accessKeyId %>',
+          secretAccessKey: '<%= aws.documentation.secretAccessKey %>',
+          bucket: '<%= aws.documentation.bucket %>',
+          region: '<%= aws.documentation.region %>'
+        },
+        cwd: 'public',
+        src: '**'
       }
     }
   };
@@ -83,7 +77,7 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   grunt.registerTask('default', ['connect', 'less', 'buildDocs', 'watch']);
-  grunt.registerTask('build-docs', ['buildDocs']);
-  grunt.registerTask('release', ['less', 'checkVersion', s3Task + ':development']);
-  grunt.registerTask('gh-pages', ['shell:update_gh_pages', 'less', 'shell:push_gh_pages']);
+  grunt.registerTask('build-docs', ['less', 'buildDocs']);
+  grunt.registerTask('deploy-docs', ['build-docs', 'checkVersion', s3Task + ':documentation']);
+  grunt.registerTask('release', ['less', 'checkVersion', s3Task + ':cdn']);
 };
