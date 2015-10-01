@@ -1,5 +1,5 @@
 'use strict';
-var fs = require('fs');
+var fs = require('fs-extra');
 var path = require('path');
 var sourceDir = __dirname + "/../docs/";
 
@@ -58,6 +58,21 @@ module.exports = function(grunt) {
     var docsSideMenuItemTemplate = readFile("core/docs-menu-item.html");
 
     for(var pageName in buildScript) {
+      if(pageName === "vendor") {
+        console.log("Copying vendor files...");
+        var vendorFiles = buildScript[pageName];
+        for(var index in vendorFiles) {
+          var vendorPath = vendorFiles[index];
+          var vendorFile = vendorPath.split('\\').pop().split('/').pop();
+          var extension = /(?:\.([^.]+))?$/.exec(vendorFile)[1];
+          var directoryPath = "public/vendor/" + extension;
+          var destination = directoryPath + "/" + vendorFile;
+          fs.mkdirsSync(directoryPath);
+          fs.copySync(vendorPath, destination);
+        }
+        continue;
+      }
+
       var pageFileName, mainMenuContent, pageContent, pageOutput;
 
       pageFileName = pageName + ".html";
@@ -65,6 +80,9 @@ module.exports = function(grunt) {
 
       //build main menu
       for(var menuPageName in buildScript) {
+        if(menuPageName === "vendor") {
+          continue;
+        }
         var menuPageFileName, menuItemClass;
 
         menuPageFileName = menuPageName + ".html";

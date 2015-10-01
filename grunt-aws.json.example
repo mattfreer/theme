@@ -1,7 +1,14 @@
 {
-  "accessKeyId": "S3_KEY",
-  "secretAccessKey": "S3_SECRET",
-  "bucket": "S3_BUCKET_NAME",
-  "region": "us-east-1",
-  "distribution": "CLOUDFRONT_DISTRIBUTION"
+  "cdn": {
+    "accessKeyId": "S3_KEY",
+    "secretAccessKey": "S3_SECRET",
+    "bucket": "S3_BUCKET_NAME",
+    "region": "eu-west-1"
+  },
+  "documentation": {
+    "accessKeyId": "S3_KEY",
+    "secretAccessKey": "S3_SECRET",
+    "bucket": "S3_BUCKET_NAME",
+    "region": "eu-west-1"
+  }
 }
