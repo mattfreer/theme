@@ -12,17 +12,18 @@ module.exports = function(grunt) {
     builddir: 'build',
     watch: {
       files: ['docs/**/*.*', 'overrides/**/*.less', 'components/**/*.less', 'build.less'],
-      tasks: ['less'],
+      tasks: ['build-docs'],
       options: {
         livereload: true,
-         nospawn: true
+        nospawn: true
       }
     },
     connect: {
       server: {
         options: {
           port: 3001,
-          livereload: true
+          livereload: true,
+          base: 'public'
         }
       }
     },
