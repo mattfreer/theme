@@ -35,4 +35,4 @@ Once you're up and running, take a look at the [Contribution Document](https://g
 Code released under the MIT license. Docs released under Creative Commons.
 
 [Bootstrap]: http://getbootstrap.com
-[Theme]: http://livestax.github.io/theme
+[Theme]: http://theme.livestax.com
