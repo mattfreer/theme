@@ -1,0 +1,74 @@
+<p>Once you have the repository forked, you can start building your own component. The <code>components/</code> directory contains all of the custom components in neat, self contained directories.</p>
+
+<p><strong>Example Components Directory Structure:</strong></p>
+<blockquote>
+  <ul>
+    <li>
+      components/
+      <ul>
+        <li>badge/</li>
+        <li>collapsible-panel/</li>
+        <li>dropdown-item/</li>
+        <li>indicators/</li>
+        <li>inline-form-item/</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>The component sub-directory contains all files required for the component, such as the .less stylesheet and any documentation.</p>
+<p>To create a new component, simply create a new sub-directory within the <code>components/</code> directory with a directory name that appropriately describes the component.</p>
+<p><small><em>Please Note: Use hyphens '-' instead of spaces in directory names.</em></small></p>
+
+<title>Component Styles</title>
+<p>To create custom styles for a component, simply create a <code>styles.less</code> file within your component directory and add any required styles to this file. Styles are defined in LESS to provide an easier to maintain styles file, which compiles down to the final Theme CSS.</p>
+
+<title>Component Documentation</title>
+<p>To provide documentation for your component, simply create an appropriately named HTML file within your components directory <br/>e.g. <code>basic.html</code>.</p>
+
+<blockquote>
+  <ul>
+    <li>
+      components/
+      <ul>
+        <li>
+          my-new-component/
+          <ul>
+            <li>basic.html</li>
+            <li>detailed.html</li>
+            <li>styles.less</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>The contents of the HTML documentation file is just HTML with the exception of two helper tags:</p>
+
+<p><strong>Title Tag</strong></p>
+<blockquote>
+  <p>The <code>title</code> tag creates emphasized title text within the documentation. The text is 'Word Capitalized'.</p>
+  <code>&lt;title&gt;Example title text here&lt;/title&gt;</code>
+  <title>Example title text here</title>
+</blockquote>
+
+<p><strong>Example Tag</strong></p>
+<blockquote>
+  <p>The <code>example</code> tag wraps any inner HTML content within an example block and provides a mechanism to view the example source code in a modal.</p>
+  <code>
+    &lt;example&gt;<br/>
+    &nbsp;&nbsp;&lt;div&gt;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My example code to display&lt;/p&gt;<br/>
+    &nbsp;&nbsp;&lt;/div&gt;<br/>
+    &lt;/example&gt;
+  </code>
+  <br/><br/>
+  <example>
+    <div>
+      <p>My example code to display</p>
+    </div>
+  </example>
+</blockquote>
+
+<p>It is advised not to include any custom styles in your documentation and to just use styles and components that are already provided by the Theme.</p>
