@@ -1,0 +1,57 @@
+<p>To include your new component in the public documentation, you need to update the <code>docs/build.json</code> file to reference your component docs.</p>
+<p>The <code>build.json</code> file determines which content within the <code>docs/</code> directory will be used to generate the docs and in which order it will appear. Even though your component documentation is in the <code>components/</code> directory, it will still be included in the build as there is a symlink of <code>./docs/components/ -> ./components/</code></p>
+
+<p><strong>build.json Example:</strong></p>
+<blockquote>
+  <code>
+    {<br/>
+    &nbsp;&nbsp;"home": {<br/>
+    &nbsp;&nbsp;},<br/>
+    &nbsp;&nbsp;"styles": {<br/>
+    &nbsp;&nbsp;},<br/>
+    &nbsp;&nbsp;"components": {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;"panels": [<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"basic",<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"contextual"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;],<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;"dropdown-item": [<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"individual",<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"list"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+    &nbsp;&nbsp;}<br/>
+    }<br/>
+  </code>
+</blockquote>
+
+<p>To add your component documentation, simply add your component and the sub-sections to the <code>build.json</code> file. You can determine the position of your component documentation by placing it between the relevant lines of the <code>build.json</code> file.</p>
+<p>The main section will be the directory name of your component and each subsequent sub-section will be the relevant HTML files within the directory.</p>
+
+<p><strong>build.json Updated Example:</strong></p>
+<blockquote>
+  <code>
+    {<br/>
+    &nbsp;&nbsp;"home": {<br/>
+    &nbsp;&nbsp;},<br/>
+    &nbsp;&nbsp;"styles": {<br/>
+    &nbsp;&nbsp;},<br/>
+    &nbsp;&nbsp;"components": {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;"panels": [<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"basic",<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"contextual"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;],<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;"my-new-component": [<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"basic",<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"detailed"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;],<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;"dropdown-item": [<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"individual",<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"list"<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+    &nbsp;&nbsp;}<br/>
+    }<br/>
+  </code>
+</blockquote>
+
+<p>Building the public documentation and hosting it locally is done via a grunt task and simply running <code>grunt</code> will initiate the build process and host the results on your local IP address.</p>
+
+<p>The grunt server uses code magic to monitor any changes you make to the docs and auto-(re)build the docs and refresh your web browser, so whenever you make changes to your docs, it will auto refresh right before your eyes!</p>

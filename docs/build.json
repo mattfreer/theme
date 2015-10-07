@@ -8,7 +8,17 @@
   ],
   "home": {
     "overview": [],
-    "usage": []
+    "usage": [],
+    "contributing": [
+      "installing",
+      "building-components",
+      "generating-docs",
+      "submitting-content"
+    ],
+    "license": [
+      "code",
+      "documentation"
+    ]
   },
   "styles": {
     "typography": [
