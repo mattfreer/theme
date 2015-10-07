@@ -23,7 +23,12 @@ module.exports = function(grunt) {
         options: {
           port: 3001,
           livereload: true,
-          base: 'public'
+          base: {
+            path: 'public',
+            options: {
+              index: 'home.html'
+            }
+          }
         }
       }
     },
