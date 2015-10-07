@@ -11,9 +11,25 @@
     overflow: hidden;
     .flex(1);
 
-    > * {
+    * {
       margin: 0;
-      margin-bottom: 5px;
+    }
+
+    &.media-content-columns {
+      .display-flex;
+      .align-items(center);
+
+      & > * {
+        margin-right: @media-group-item-pull-margin;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.stretch {
+          .flex(1);
+        }
+      }
     }
   }
 
