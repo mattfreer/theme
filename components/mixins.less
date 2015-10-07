@@ -19,10 +19,23 @@
   align-items: @align;
 }
 
+.ms-flex-align-self(@align) when (@align = flex-start) {
+  -ms-flex-item-align: start;
+}
+
+.ms-flex-align-self(@align) when (@align = flex-end) {
+  -ms-flex-item-align: end;
+}
+
+.ms-flex-align-self(@align) when (@align = auto), (@align = center), (@align = baseline), (@align = stretch) {
+  -ms-flex-item-align: @align;
+}
+
 .align-self(@align: auto) {
   -webkit-align-self: @align;
   -moz-align-self: @align;
   -ms-align-self: @align;
+  .ms-flex-align-self(@align);
   align-self: @align;
 }
 
