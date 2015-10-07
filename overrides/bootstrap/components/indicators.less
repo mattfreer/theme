@@ -1,5 +1,7 @@
 // Indicators =================================================================
 
+// Alerts ===================================================
+
 .close {
   text-decoration: none;
   text-shadow: none;
@@ -26,6 +28,8 @@
   margin-bottom: 2px;
 }
 
+// Labels ===================================================
+
 .label {
   border-radius: 0;
   font-weight: 500;
@@ -33,6 +37,35 @@
 }
 
 .label-default {
- color: @brand-primary;
- background-color: @gray-lightest;
+ background-color: @gray-light;
+}
+
+.label-inverse-variant(@color, @border-color) {
+  background-color: #fff;
+  border: 1px solid @border-color;
+  color: @color;
+}
+
+.label-default-inverse {
+  .label-inverse-variant(@gray, @gray-lighter);
+}
+
+.label-primary-inverse {
+  .label-inverse-variant(@brand-primary, @brand-primary);
+}
+
+.label-success-inverse {
+  .label-inverse-variant(@brand-success, @brand-success);
+}
+
+.label-warning-inverse {
+  .label-inverse-variant(@brand-warning, @brand-warning);
+}
+
+.label-danger-inverse {
+  .label-inverse-variant(@brand-danger, @brand-danger);
+}
+
+.label-info-inverse {
+  .label-inverse-variant(@brand-info, @brand-info);
 }
