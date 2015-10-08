@@ -65,6 +65,10 @@
       "filled-badge",
       "outlined-badge"
     ],
+    "search-input": [
+      "submit",
+      "inline"
+    ],
     "list-groups": [
       "basic",
       "badge",
