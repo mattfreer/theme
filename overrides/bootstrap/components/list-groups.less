@@ -28,3 +28,16 @@ a.list-group-item.unselectable {
 .list-group-item-text {
   margin-bottom: 3px;
 }
+
+a.list-group-item-muted {
+  background-color: @gray-lightest;
+  color: @gray;
+}
+
+a.list-group-item-muted.unselectable {
+  &:hover, &:focus {
+    background-color: @gray-lightest;
+    color: @gray;
+  }
+}
+
