@@ -22,6 +22,19 @@
 
 <title>Component Styles</title>
 <p>To create custom styles for a component, simply create a <code>styles.less</code> file within your component directory and add any required styles to this file. Styles are defined in LESS to provide an easier to maintain styles file, which compiles down to the final Theme CSS.</p>
+<p>You will also need to update the <code>build.less</code> file in the root of the project directory to include your new <code>styles.less</code> file. We recommend you add your new component to the end of the <code>//Extended Components</code> section of the <code>build.less</code> file.</p>
+
+<p><strong>build.less Example:</strong></p>
+<blockquote>
+  <code>
+    // Extended Components<br/>
+    @import "components/mixins.less";<br/>
+    @import "components/badge/styles.less";<br/>
+    @import "components/collapsible-panel/styles.less";<br/>
+    @import "components/dropdown-item/styles.less";<br/>
+    @import "components/my-new-component/styles.less";<br/>
+  </code>
+</blockquote>
 
 <title>Component Documentation</title>
 <p>To provide documentation for your component, simply create an appropriately named HTML file within your components directory <br/>e.g. <code>basic.html</code>.</p>
