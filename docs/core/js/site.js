@@ -11,7 +11,7 @@ function prepareViewSourceBtn() {
 
   var $button = $("<div id='source-button' class='btn btn-primary btn-xs'>&lt; View Source &gt;</div>").click(function(){
     var html = $(this).parent().html();
-    html = cleanSource(html);
+    html = formatSource(html);
     $("#source-modal pre").text(html);
     $("#source-modal").modal();
   });
@@ -25,6 +25,13 @@ function prepareViewSourceBtn() {
 }
 
 function cleanSource(html) {
+  return html
+         .replace(/<pagehtml>[\S\s]*?<\/pagehtml>\n/gi, "")
+         .replace(/<docshtml>/gi, "")
+         .replace(/<\/docshtml>\n/gi, "");
+}
+
+function formatSource(html) {
   var lines = html.split(/\n/);
 
   lines.shift();
@@ -43,7 +50,7 @@ function cleanSource(html) {
 
   lines = lines.join("\n");
 
-  return lines;
+  return cleanSource(lines);
 }
 
 function affixSideMenu() {
