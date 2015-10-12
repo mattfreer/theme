@@ -1,0 +1,218 @@
+<div class="row">
+  <div class="col-md-4">
+    <title>Simple</title>
+    <example>
+      <div class="search-list-basic-inline-simple">
+        <div class="container-fluid">
+          <br/>
+          <form class="input-group search-input" novalidate>
+            <input type="text" name="search-input" required="required" class="form-control" placeholder="Enter text to filter list">
+            <input type="reset" alt="clear" value="×">
+            <i class="fa fa-search fa-fw text-muted"></i>
+          </form>
+          <br/>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">Arthur</li>
+          <li class="list-group-item">David</li>
+          <li class="list-group-item">Brian</li>
+          <li class="list-group-item">Simon</li>
+          <li class="list-group-item">Luther</li>
+          <li class="list-group-item">Nathan</li>
+        </ul>
+      </div>
+
+      <script>
+        function searchListFilter(inputValue, listItems, listItemDecorator) {
+          for(var i = 0; i < listItems.length; i++) {
+            var listItem = listItems[i],
+                listText = listItem.textContent;
+                inputValueIndex = listText.toLowerCase().trim().indexOf(inputValue);
+
+            listItem.style.display = "none";
+            if (inputValueIndex >= 0 ) {
+              listItem.style.display = "block";
+              listItemDecorator(listItem, listText, inputValue, inputValueIndex);
+            }
+          }
+        }
+
+        var searchListBasicSimple_Items = document.querySelectorAll(".search-list-basic-inline-simple ul li"),
+            basicSimple_Decorator = function itemDecorator(listItem, listText, inputValue, inputValueIndex) {
+                                      listItem.innerHTML = listText.substr(0, inputValueIndex) +
+                                                           "<strong class='text-primary'>" +
+                                                           listText.substr(inputValueIndex, inputValue.length) +
+                                                           "</strong>" +
+                                                           listText.substr(inputValueIndex + inputValue.length);
+                                    };
+
+        document.querySelector(".search-list-basic-inline-simple input[type=text]").onkeyup = function(e) {
+          var inputValue = this.value.toLowerCase().trim();
+          searchListFilter(inputValue, searchListBasicSimple_Items, basicSimple_Decorator);
+        }
+
+        document.querySelector(".search-list-basic-inline-simple input[type=reset]").onclick = function() {
+          searchListFilter("", searchListBasicSimple_Items, basicSimple_Decorator);
+        }
+      </script>
+    </example>
+  </div>
+  <div class="col-md-4">
+    <title>Header</title>
+    <example>
+      <div class="search-list-basic-inline-header">
+        <div class="container-fluid">
+          <br/>
+          <form class="input-group search-input" novalidate>
+            <input type="text" name="search-input" required="required" class="form-control" placeholder="Enter text to filter list">
+            <input type="reset" alt="clear" value="×">
+            <i class="fa fa-search fa-fw text-muted"></i>
+          </form>
+          <br/>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-muted unselectable"><strong>Finance</strong></li>
+          <li class="list-group-item list-group-item-condensed">Arthur</li>
+          <li class="list-group-item list-group-item-condensed">David</li>
+          <li class="list-group-item list-group-item-condensed">Brian</li>
+          <li class="list-group-item list-group-item-muted unselectable"><strong>Human Resources</strong></li>
+          <li class="list-group-item list-group-item-condensed">Simon</li>
+          <li class="list-group-item list-group-item-condensed">Luther</li>
+          <li class="list-group-item list-group-item-condensed">Nathan</li>
+        </ul>
+      </div>
+
+      <script>
+        function searchListFilter(inputValue, listItems, listItemDecorator) {
+          for(var i = 0; i < listItems.length; i++) {
+            var listItem = listItems[i],
+                listText = listItem.textContent;
+                inputValueIndex = listText.toLowerCase().trim().indexOf(inputValue);
+
+            listItem.style.display = "none";
+            if (inputValueIndex >= 0 ) {
+              listItem.style.display = "block";
+              listItemDecorator(listItem, listText, inputValue, inputValueIndex);
+            }
+          }
+        }
+
+        var searchListBasicHeader_Items = document.querySelectorAll(".search-list-basic-inline-header ul li:not(.list-group-item-muted)"),
+            basicHeader_Decorator = function itemDecorator(listItem, listText, inputValue, inputValueIndex) {
+                                      listItem.innerHTML = listText.substr(0, inputValueIndex) +
+                                                           "<strong class='text-primary'>" +
+                                                           listText.substr(inputValueIndex, inputValue.length) +
+                                                           "</strong>" +
+                                                           listText.substr(inputValueIndex + inputValue.length);
+                                    };
+
+        document.querySelector(".search-list-basic-inline-header input[type=text]").onkeyup = function(e) {
+          var inputValue = this.value.toLowerCase().trim();
+          searchListFilter(inputValue, searchListBasicHeader_Items, basicHeader_Decorator);
+        }
+
+        document.querySelector(".search-list-basic-inline-header input[type=reset]").onclick = function() {
+          searchListFilter("", searchListBasicHeader_Items, basicHeader_Decorator);
+        }
+      </script>
+    </example>
+  </div>
+  <div class="col-md-4">
+    <title>Sorted</title>
+    <example>
+      <div class="search-list-basic-inline-sorted">
+        <div class="container-fluid">
+          <br/>
+          <form class="input-group search-input" novalidate>
+            <input type="text" name="search-input" required="required" class="form-control" placeholder="Enter text to filter list">
+            <input type="reset" alt="clear" value="×">
+            <i class="fa fa-search fa-fw text-muted"></i>
+          </form>
+          <br/>
+        </div>
+        <pagehtml>
+          <ul class="list-group list-group-example-html">
+            <li class="list-group-item list-group-item-condensed">Arthur</li>
+            <li class="list-group-item list-group-item-condensed">David</li>
+            <li class="list-group-item list-group-item-condensed">Nigel</li>
+            <li class="list-group-item list-group-item-condensed">Andrew</li>
+            <li class="list-group-item list-group-item-condensed">Nathan</li>
+          </ul>
+        </pagehtml>
+        <docshtml>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-condensed">Arthur</li>
+            <li class="list-group-item list-group-item-condensed">David</li>
+            <li class="list-group-item list-group-item-condensed">Nigel</li>
+            <li class="list-group-item list-group-item-condensed">Andrew</li>
+            <li class="list-group-item list-group-item-condensed">Nathan</li>
+          </ul>
+        </docshtml>
+      </div>
+
+      <script>
+        function sortSearchList(list) {
+          var listItems = list.getElementsByTagName("li"),
+              itemsArray = Array.prototype.slice.call(listItems, 0);
+
+          itemsArray.sort(function(a, b) {
+            return a.innerHTML == b.innerHTML ? 0 : (a.innerHTML > b.innerHTML ? 1 : -1);
+          });
+
+          list.innerHTML = "";
+
+          var currentHeader = "";
+          for (var i = 0; i < itemsArray.length; i++) {
+            var currentIndex = itemsArray[i].innerHTML[0];
+
+            if (currentIndex !== currentHeader) {
+              var header = document.createElement("li");
+              header.setAttribute("class", "list-group-item list-group-item-muted unselectable");
+              header.innerHTML = "<strong>" + currentIndex+ "</strong>";
+
+              list.appendChild(header);
+            }
+
+            currentHeader = currentIndex;
+            list.appendChild(itemsArray[i]);
+          }
+
+          return list;
+        }
+
+        function searchListFilter(inputValue, listItems, listItemDecorator) {
+          for(var i = 0; i < listItems.length; i++) {
+            var listItem = listItems[i],
+                listText = listItem.textContent;
+                inputValueIndex = listText.toLowerCase().trim().indexOf(inputValue);
+
+            listItem.style.display = "none";
+            if (inputValueIndex >= 0 ) {
+              listItem.style.display = "block";
+              listItemDecorator(listItem, listText, inputValue, inputValueIndex);
+            }
+          }
+        }
+
+        var searchListBasicSorted_List = sortSearchList( document.querySelector(".search-list-basic-inline-sorted ul.list-group-example-html") ),
+            searchListBasicSorted_Items = searchListBasicSorted_List.querySelectorAll(".search-list-basic-inline-sorted ul.list-group-example-html li:not(.list-group-item-muted)"),
+            basicSorted_Decorator = function itemDecorator(listItem, listText, inputValue, inputValueIndex) {
+                                      listItem.innerHTML = listText.substr(0, inputValueIndex) +
+                                                           "<strong class='text-primary'>" +
+                                                           listText.substr(inputValueIndex, inputValue.length) +
+                                                           "</strong>" +
+                                                           listText.substr(inputValueIndex + inputValue.length);
+                                    };
+
+        document.querySelector(".search-list-basic-inline-sorted input[type=text]").onkeyup = function(e) {
+          var inputValue = this.value.toLowerCase().trim();
+          searchListFilter(inputValue, searchListBasicSorted_Items, basicSorted_Decorator);
+        }
+
+        document.querySelector(".search-list-basic-inline-sorted input[type=reset]").onclick = function() {
+          searchListFilter("", searchListBasicSorted_Items, basicSorted_Decorator);
+        }
+      </script>
+    </example>
+  </div>
+</div>
