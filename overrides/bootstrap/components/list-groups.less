@@ -1,20 +1,24 @@
 // List groups  ==============================================================
 
 .list-group-item {
-  padding: 8px 12px;
+  padding: 8px 15px;
   margin-bottom: 0px;
 }
 
+.list-group-item-condensed {
+  padding: 6px 15px;
+}
+
 .list-group-item {
-  border-top: none;
+  border-top: 1px solid @gray-lighter;
 
   &:hover {
     cursor: pointer;
   }
+}
 
-  &:first-child:not(.active) {
-    border-top: 1px solid @gray-lighter;
-  }
+.list-group-item:not([style*="display: none"]):not(first-child) ~ .list-group-item {
+  border-top: none;
 }
 
 a.list-group-item.unselectable {
@@ -33,15 +37,16 @@ a.list-group-item.unselectable {
   margin-bottom: 3px;
 }
 
+.list-group-item-muted,
 a.list-group-item-muted {
   background-color: @gray-lightest;
-  color: @gray;
+  color: @gray-dark;
 }
 
 a.list-group-item-muted.unselectable {
   &:hover, &:focus {
     background-color: @gray-lightest;
-    color: @gray;
+    color: @gray-dark;
   }
 }
 
