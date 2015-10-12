@@ -86,6 +86,9 @@
       "individual",
       "list"
     ],
+    "collapsible-item": [
+      "list"
+    ],
     "panels": [
       "basic",
       "contextual"
