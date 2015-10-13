@@ -1,4 +1,10 @@
 .dropdown-item {
+
+  &:hover {
+    background-color: transparent;
+    cursor: default;
+  }
+
   .btn {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -42,7 +48,9 @@
         background-color: @gray-lightest;
       }
 
-      &:hover, &:active {
+      &:hover,
+      &:focus,
+      &:active {
         text-decoration: none
       }
 
