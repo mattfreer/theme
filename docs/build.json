@@ -110,7 +110,8 @@
   },
   "examples": {
     "search-lists": [
-      "basic-inline"
+      "basic-inline",
+      "rich-types"
     ]
   }
 }
