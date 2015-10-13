@@ -14,13 +14,47 @@
       padding: @list-item-padding;
       border: 1px solid @gray-lighter;
       border-top: none;
+      position: relative;
 
       &:hover {
         background-color: @gray-lightest;
       }
 
+      &::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        right: 12px;
+        width: 7px;
+        height: 7px;
+        background-color: @brand-primary;
+        border-radius: 50%;
+      }
+
       &:not(.collapsed) {
         border-bottom: none;
+
+        &::before {
+          background-color: @gray-light;
+        }
+      }
+    }
+
+    &.active {
+      [data-toggle=collapse] {
+        &::before {
+          border: 2px solid white;
+          width: 9px;
+          height: 9px;
+        }
+
+        &:not(.collapsed) {
+          border-bottom: none;
+
+          &::before {
+            background-color: @gray-light;
+          }
+        }
       }
     }
 
