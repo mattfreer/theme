@@ -1,6 +1,32 @@
 @media-group-item-padding: 16px;
 @list-item-padding: 8px 12px;
 
+.nested-padding(@base-padding, @increment: 12px) {
+  &.padding-1-left, .padding-1-left {
+    padding-left: @base-padding;
+  }
+
+  &.padding-2-left, .padding-2-left {
+    padding-left: @base-padding + @increment;
+  }
+
+  &.padding-3-left, .padding-3-left {
+    padding-left: @base-padding + @increment * 2;
+  }
+
+  &.padding-4-left, .padding-4-left {
+    padding-left: @base-padding + @increment * 3;
+  }
+
+  &.padding-5-left, .padding-5-left {
+    padding-left: @base-padding + @increment * 4;
+  }
+
+  &.padding-6-left, .padding-6-left {
+    padding-left: @base-padding + @increment * 5;
+  }
+}
+
 .list-group-item {
   &.collapsible-item {
     padding: 0;
@@ -14,13 +40,51 @@
       padding: @list-item-padding;
       border: 1px solid @gray-lighter;
       border-top: none;
+      position: relative;
 
       &:hover {
         background-color: @gray-lightest;
       }
 
+      &::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        right: 12px;
+        width: 7px;
+        height: 7px;
+        background-color: @brand-primary;
+        border-radius: 50%;
+      }
+
       &:not(.collapsed) {
         border-bottom: none;
+
+        &::before {
+          background-color: @gray-light;
+        }
+      }
+    }
+
+    .list-group-item {
+      .nested-padding(12px);
+    }
+
+    &.active {
+      [data-toggle=collapse] {
+        &::before {
+          border: 2px solid white;
+          width: 9px;
+          height: 9px;
+        }
+
+        &:not(.collapsed) {
+          border-bottom: none;
+
+          &::before {
+            background-color: @gray-light;
+          }
+        }
       }
     }
 
@@ -37,13 +101,13 @@
         height: auto;
         overflow: inherit;
 
-        &.collapsing {
-          overflow: hidden;
-        }
+      }
+      &.collapsing {
+        overflow: hidden;
+      }
 
-        .list-group-item:first-child {
-          border-top: 1px solid @gray-lighter;
-        }
+      .list-group-item:first-child {
+        border-top: 1px solid @gray-lighter;
       }
     }
 
@@ -66,36 +130,45 @@
         }
       }
     }
+  }
+}
 
-    &.media-group-item {
-      [data-toggle=collapse] {
-        padding: @media-group-item-padding;
+.media-group-item {
+  &.collapsible-item {
+    & > [data-toggle=collapse] {
+      padding: @media-group-item-padding;
+    }
+
+    [data-toggle=collapse] {
+      border-left: none;
+      border-right: none;
+    }
+
+    &:last-child [data-toggle=collapse] {
+      border-bottom: none;
+    }
+
+    .media-group-item {
+      .nested-padding(16px);
+    }
+
+    & > ul, & > .list-group {
+      .list-group-item {
         border-left: none;
         border-right: none;
-      }
 
-      &:last-child [data-toggle=collapse] {
-        border-bottom: none;
-      }
-
-      & > ul, & > .list-group {
-        .list-group-item {
-          border-left: none;
-          border-right: none;
-
-          &.dropdown-item .dropdown-toggle {
-            right: 2px;
-          }
+        &.dropdown-item .dropdown-toggle {
+          right: 2px;
         }
       }
+    }
 
-      &.active {
-        border-bottom: none;
+    &.active {
+      border-bottom: none;
 
-        & > ul, & > .list-group {
-          * {
-            color: @text-color;
-          }
+      & > ul, & > .list-group {
+        * {
+          color: @text-color;
         }
       }
     }
