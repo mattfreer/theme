@@ -4,6 +4,29 @@
     <ul class="list-group">
 
       <li class="list-group-item media-group-item collapsible-item active">
+        <div class="collapsed media-row" data-toggle="collapse" data-target="#nested-1">
+          <div class="media-badge img-circle">
+            <span class="media-badge-container">
+              <img class="img-circle" alt="sample photo of sewing buttons" src="vendor/jpg/test_image_1.jpg">
+            </span>
+            <span class="badge">
+              <h5><i class="fa fa-user"></i></h5>
+            </span>
+          </div>
+          <div>
+            <h4 class="line-tighter">Level 1</h4>
+            <h5 class="line-tighter text-muted">Donec eu ipsum vel massa pretium.</h5>
+          </div>
+        </div>
+
+        <div id="nested-1" class="list-group">
+          <a href="#" class="list-group-item padding-2-left">Level 2</a>
+          <a href="#" class="list-group-item padding-2-left">Level 2</a>
+          <a href="#" class="list-group-item padding-2-left">Level 2</a>
+        </div>
+      </li>
+
+      <li class="list-group-item media-group-item collapsible-item">
         <div class="collapsed media-row" data-toggle="collapse" data-target="#nested-2">
           <div class="media-badge img-circle">
             <span class="media-badge-container">
@@ -14,20 +37,25 @@
             </span>
           </div>
           <div>
-            <h4 class="line-tighter">Nested list-group-item</h4>
+            <h4 class="line-tighter">Level 1</h4>
             <h5 class="line-tighter text-muted">Donec eu ipsum vel massa pretium.</h5>
           </div>
         </div>
 
-        <div id="nested-2" class="list-group">
-          <a href="#" class="list-group-item">Donec ipsum</a>
-          <a href="#" class="list-group-item">Donec ipsum</a>
-          <a href="#" class="list-group-item">Donec ipsum</a>
-        </div>
+        <ul id="nested-2" class="list-group">
+          <li class="list-group-item collapsible-item">
+            <div class="collapsed padding-2-left" data-toggle="collapse" data-target="#nested-3">
+              Level 2
+            </div>
+            <ul id="nested-3" class="list-group">
+              <li class="list-group-item padding-3-left">Level 3</li>
+            </ul>
+          </li>
+        </ul>
       </li>
 
       <li class="list-group-item media-group-item collapsible-item">
-        <div class="collapsed media-row" data-toggle="collapse" data-target="#nested-3">
+        <div class="collapsed media-row" data-toggle="collapse" data-target="#nested-4">
           <div class="media-badge img-circle">
             <span class="media-badge-container">
               <img class="img-circle" alt="sample photo of sewing buttons" src="vendor/jpg/test_image_1.jpg">
@@ -37,24 +65,14 @@
             </span>
           </div>
           <div>
-            <h4 class="line-tighter">Nested dropdown-item</h4>
+            <h4 class="line-tighter">Level 1</h4>
             <h5 class="line-tighter text-muted">Donec eu ipsum vel massa pretium.</h5>
           </div>
         </div>
 
-        <ul id="nested-3" class="list-group">
+        <ul id="nested-4" class="list-group">
           <li class="list-group-item dropdown-item">
-            <a href="#">Nulla euismod</a>
-            <a href="#" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li><a href="#"><span>Edit</span></a></li>
-              <li><a href="#"><span>Delete</span></a></li>
-            </ul>
-          </li>
-          <li class="list-group-item dropdown-item">
-            <a href="#"> Donec eu ipsum </a>
+            <a class="padding-2-left" href="#">Level 2</a>
             <a href="#" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
               <span class="caret"></span>
             </a>
@@ -67,7 +85,7 @@
       </li>
 
       <li class="list-group-item media-group-item collapsible-item">
-        <div class="collapsed media-row" data-toggle="collapse" data-target="#nested-1">
+        <div class="collapsed media-row" data-toggle="collapse" data-target="#nested-5">
           <div class="media-badge img-circle">
             <span class="media-badge-container">
               <img class="img-circle" alt="sample photo of sewing buttons" src="vendor/jpg/test_image_1.jpg">
@@ -77,20 +95,37 @@
             </span>
           </div>
           <div>
-            <h4 class="line-tighter">Nested inline-form-item</h4>
+            <h4 class="line-tighter">Level 1</h4>
             <h5 class="line-tighter text-muted">Donec eu ipsum vel massa pretium.</h5>
           </div>
         </div>
 
-        <ul id="nested-1" class="list-group">
-          <li class="list-group-item dropdown-item">
-            <a href="#"> Donec eu ipsum </a>
-            <a href="#" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li><a href="#"><span>Edit</span></a></li>
-              <li><a href="#"><span>Delete</span></a></li>
+        <ul id="nested-5" class="list-group">
+          <li class="list-group-item media-group-item collapsible-item">
+            <div class="collapsed media-row padding-2-left" data-toggle="collapse" data-target="#nested-6">
+              <div class="media-badge img-circle">
+                <span class="media-badge-container">
+                  <img class="img-circle" alt="sample photo of sewing buttons" src="vendor/jpg/test_image_1.jpg">
+                </span>
+              </div>
+              <div>
+                <h4 class="line-tighter">Level 2</h4>
+                <h5 class="line-tighter text-muted">Donec eu ipsum vel massa pretium.</h5>
+              </div>
+            </div>
+
+            <ul id="nested-6" class="list-group">
+              <li class="list-group-item media-group-item media-row padding-3-left">
+                <div class="media-badge img-circle">
+                  <span class="media-badge-container">
+                    <img class="img-circle" alt="sample photo of sewing buttons" src="vendor/jpg/test_image_1.jpg">
+                  </span>
+                </div>
+                <div>
+                  <h4 class="line-tighter">Level 3</h4>
+                  <h5 class="line-tighter text-muted">Donec eu ipsum vel massa pretium.</h5>
+                </div>
+              </li>
             </ul>
           </li>
         </ul>
@@ -103,13 +138,13 @@
     <example>
     <ul class="list-group">
       <li class="list-group-item collapsible-item active">
-        <div class="collapsed" data-toggle="collapse" data-target="#nested-4">
-          Active list-item
+        <div class="collapsed" data-toggle="collapse" data-target="#nested-7">
+          Level 1 - Active
         </div>
 
-        <ul id="nested-4" class="list-group">
+        <ul id="nested-7" class="list-group">
           <li class="list-group-item dropdown-item">
-            <a href="#">Nulla euismod</a>
+            <a class="padding-2-left" href="#">Level 2</a>
             <a href="#" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
               <span class="caret"></span>
             </a>
@@ -119,7 +154,7 @@
             </ul>
           </li>
           <li class="list-group-item dropdown-item">
-            <a href="#"> Donec eu ipsum </a>
+            <a class="padding-2-left" href="#">Level 2</a>
             <a href="#" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
               <span class="caret"></span>
             </a>
@@ -132,29 +167,37 @@
       </li>
 
       <li class="list-group-item collapsible-item">
-        <div class="collapsed" data-toggle="collapse" data-target="#nested-5">
+        <div class="collapsed" data-toggle="collapse" data-target="#nested-8">
           Level 1
         </div>
 
-        <ul id="nested-5" class="list-group">
+        <ul id="nested-8" class="list-group">
           <li class="list-group-item collapsible-item">
-            <div class="collapsed" data-toggle="collapse" data-target="#nested-6">
+            <div class="collapsed padding-2-left" data-toggle="collapse" data-target="#nested-9">
               Level 2
             </div>
 
-            <ul id="nested-6" class="list-group">
-              <li class="list-group-item dropdown-item">
-                <a href="#">Level 3</a>
-                <a href="#" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li><a href="#"><span>Edit</span></a></li>
-                  <li><a href="#"><span>Delete</span></a></li>
+            <ul id="nested-9" class="list-group">
+              <li class="list-group-item collapsible-item">
+                <div class="collapsed padding-3-left" data-toggle="collapse" data-target="#nested-10">
+                  Level 3
+                </div>
+                <ul id="nested-10" class="list-group">
+                  <li class="list-group-item dropdown-item">
+                    <a class="padding-4-left" href="#">Level 4</a>
+                    <a href="#" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li><a href="#"><span>Edit</span></a></li>
+                      <li><a href="#"><span>Delete</span></a></li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
+
               <li class="list-group-item dropdown-item">
-                <a href="#">Level 3</a>
+                <a class="padding-3-left" href="#">Level 3</a>
                 <a href="#" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
                   <span class="caret"></span>
                 </a>
