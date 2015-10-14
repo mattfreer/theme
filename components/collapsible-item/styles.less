@@ -36,6 +36,14 @@
       background-color: transparent;
     }
 
+    &.no-indicator {
+      & > [data-toggle=collapse] {
+        &::before {
+          content: none;
+        }
+      }
+    }
+
     [data-toggle=collapse] {
       padding: @list-item-padding;
       border: 1px solid @gray-lighter;
