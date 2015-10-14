@@ -25,16 +25,17 @@
       </div>
 
       <script>
-        function searchListFilter(inputValue, listItems, listItemDecorator) {
+        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
-                listText = listItem.textContent,
+                listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
+                listText = listItemTitle.textContent,
                 inputValueIndex = listText.toLowerCase().trim().indexOf(inputValue);
 
             listItem.style.display = "none";
             if (inputValueIndex >= 0 ) {
-              listItem.style.display = "block";
-              listItemDecorator(listItem, listText, inputValue, inputValueIndex);
+              listItem.style.display = displayType;
+              listItemDecorator(listItemTitle, listText, inputValue, inputValueIndex);
             }
           }
         }
@@ -50,11 +51,11 @@
 
         document.querySelector(".search-list-basic-inline-simple input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilter(inputValue, searchListBasicSimple_Items, basicSimple_Decorator);
+          searchListFilter(inputValue, searchListBasicSimple_Items, basicSimple_Decorator, "", "block");
         }
 
         document.querySelector(".search-list-basic-inline-simple input[type=reset]").onclick = function() {
-          searchListFilter("", searchListBasicSimple_Items, basicSimple_Decorator);
+          searchListFilter("", searchListBasicSimple_Items, basicSimple_Decorator, "", "block");
         }
       </script>
     </example>
@@ -85,16 +86,17 @@
       </div>
 
       <script>
-        function searchListFilter(inputValue, listItems, listItemDecorator) {
+        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
-                listText = listItem.textContent,
+                listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
+                listText = listItemTitle.textContent,
                 inputValueIndex = listText.toLowerCase().trim().indexOf(inputValue);
 
             listItem.style.display = "none";
             if (inputValueIndex >= 0 ) {
-              listItem.style.display = "block";
-              listItemDecorator(listItem, listText, inputValue, inputValueIndex);
+              listItem.style.display = displayType;
+              listItemDecorator(listItemTitle, listText, inputValue, inputValueIndex);
             }
           }
         }
@@ -110,11 +112,11 @@
 
         document.querySelector(".search-list-basic-inline-header input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilter(inputValue, searchListBasicHeader_Items, basicHeader_Decorator);
+          searchListFilter(inputValue, searchListBasicHeader_Items, basicHeader_Decorator, "", "block");
         }
 
         document.querySelector(".search-list-basic-inline-header input[type=reset]").onclick = function() {
-          searchListFilter("", searchListBasicHeader_Items, basicHeader_Decorator);
+          searchListFilter("", searchListBasicHeader_Items, basicHeader_Decorator, "", "block");
         }
       </script>
     </example>
@@ -182,16 +184,17 @@
           return list;
         }
 
-        function searchListFilter(inputValue, listItems, listItemDecorator) {
+        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
-                listText = listItem.textContent,
+                listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
+                listText = listItemTitle.textContent,
                 inputValueIndex = listText.toLowerCase().trim().indexOf(inputValue);
 
             listItem.style.display = "none";
             if (inputValueIndex >= 0 ) {
-              listItem.style.display = "block";
-              listItemDecorator(listItem, listText, inputValue, inputValueIndex);
+              listItem.style.display = displayType;
+              listItemDecorator(listItemTitle, listText, inputValue, inputValueIndex);
             }
           }
         }
@@ -208,11 +211,11 @@
 
         document.querySelector(".search-list-basic-inline-sorted input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilter(inputValue, searchListBasicSorted_Items, basicSorted_Decorator);
+          searchListFilter(inputValue, searchListBasicSorted_Items, basicSorted_Decorator, "", "block");
         }
 
         document.querySelector(".search-list-basic-inline-sorted input[type=reset]").onclick = function() {
-          searchListFilter("", searchListBasicSorted_Items, basicSorted_Decorator);
+          searchListFilter("", searchListBasicSorted_Items, basicSorted_Decorator, "", "block");
         }
       </script>
     </example>
