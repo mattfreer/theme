@@ -101,21 +101,31 @@
       overflow: hidden;
       margin-bottom: 0px;
 
-      .list-group-item:first-child {
-        border-top: none;
-      }
-
       &[aria-expanded=true] {
         height: auto;
         overflow: inherit;
-
       }
+
       &.collapsing {
         overflow: hidden;
+
+        &[aria-expanded=true] {
+          .list-group-item:first-child {
+            border-top: 1px solid @gray-lighter;
+          }
+        }
+
+        &[aria-expanded=false] {
+          .list-group-item:first-child {
+            border-top: none;
+          }
+        }
       }
 
-      .list-group-item:first-child {
-        border-top: 1px solid @gray-lighter;
+      &.in {
+        .list-group-item:first-child {
+          border-top: 1px solid @gray-lighter;
+        }
       }
     }
 
