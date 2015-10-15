@@ -1,9 +1,9 @@
-<p>The inline search input component is useful for real time search that utilises asynchronous actions to retrieve search results.</p>
+<p>The inline filter is useful for real time filtering results of a list.</p>
 <div class="row">
   <div class="col-md-4">
     <title>Simple</title>
     <example>
-      <div class="search-list-basic-inline-simple">
+      <div class="filter-list-basic-inline-simple">
         <div class="container-fluid">
           <br/>
           <form class="input-group search-input" novalidate>
@@ -25,7 +25,7 @@
       </div>
 
       <script>
-        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
+        function filterListAction(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
                 listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
@@ -40,7 +40,7 @@
           }
         }
 
-        var searchListBasicSimple_Items = document.querySelectorAll(".search-list-basic-inline-simple ul li"),
+        var filterListBasicSimple_Items = document.querySelectorAll(".filter-list-basic-inline-simple ul li"),
             basicSimple_Decorator = function itemDecorator(listItem, listText, inputValue, inputValueIndex) {
                                       listItem.innerHTML = listText.substr(0, inputValueIndex) +
                                                            "<strong class='text-primary'>" +
@@ -49,13 +49,13 @@
                                                            listText.substr(inputValueIndex + inputValue.length);
                                     };
 
-        document.querySelector(".search-list-basic-inline-simple input[type=text]").onkeyup = function(e) {
+        document.querySelector(".filter-list-basic-inline-simple input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilter(inputValue, searchListBasicSimple_Items, basicSimple_Decorator, "", "block");
+          filterListAction(inputValue, filterListBasicSimple_Items, basicSimple_Decorator, "", "block");
         }
 
-        document.querySelector(".search-list-basic-inline-simple input[type=reset]").onclick = function() {
-          searchListFilter("", searchListBasicSimple_Items, basicSimple_Decorator, "", "block");
+        document.querySelector(".filter-list-basic-inline-simple input[type=reset]").onclick = function() {
+          filterListAction("", filterListBasicSimple_Items, basicSimple_Decorator, "", "block");
         }
       </script>
     </example>
@@ -63,7 +63,7 @@
   <div class="col-md-4">
     <title>Header</title>
     <example>
-      <div class="search-list-basic-inline-header">
+      <div class="filter-list-basic-inline-header">
         <div class="container-fluid">
           <br/>
           <form class="input-group search-input" novalidate>
@@ -86,7 +86,7 @@
       </div>
 
       <script>
-        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
+        function filterListAction(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
                 listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
@@ -101,7 +101,7 @@
           }
         }
 
-        var searchListBasicHeader_Items = document.querySelectorAll(".search-list-basic-inline-header ul li:not(.list-group-item-muted)"),
+        var filterListBasicHeader_Items = document.querySelectorAll(".filter-list-basic-inline-header ul li:not(.list-group-item-muted)"),
             basicHeader_Decorator = function itemDecorator(listItem, listText, inputValue, inputValueIndex) {
                                       listItem.innerHTML = listText.substr(0, inputValueIndex) +
                                                            "<strong class='text-primary'>" +
@@ -110,13 +110,13 @@
                                                            listText.substr(inputValueIndex + inputValue.length);
                                     };
 
-        document.querySelector(".search-list-basic-inline-header input[type=text]").onkeyup = function(e) {
+        document.querySelector(".filter-list-basic-inline-header input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilter(inputValue, searchListBasicHeader_Items, basicHeader_Decorator, "", "block");
+          filterListAction(inputValue, filterListBasicHeader_Items, basicHeader_Decorator, "", "block");
         }
 
-        document.querySelector(".search-list-basic-inline-header input[type=reset]").onclick = function() {
-          searchListFilter("", searchListBasicHeader_Items, basicHeader_Decorator, "", "block");
+        document.querySelector(".filter-list-basic-inline-header input[type=reset]").onclick = function() {
+          filterListAction("", filterListBasicHeader_Items, basicHeader_Decorator, "", "block");
         }
       </script>
     </example>
@@ -124,7 +124,7 @@
   <div class="col-md-4">
     <title>Sorted</title>
     <example>
-      <div class="search-list-basic-inline-sorted">
+      <div class="filter-list-basic-inline-sorted">
         <div class="container-fluid">
           <br/>
           <form class="input-group search-input" novalidate>
@@ -184,7 +184,7 @@
           return list;
         }
 
-        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
+        function filterListAction(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
                 listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
@@ -199,8 +199,8 @@
           }
         }
 
-        var searchListBasicSorted_List = sortSearchList( document.querySelector(".search-list-basic-inline-sorted ul.list-group-example-html") ),
-            searchListBasicSorted_Items = searchListBasicSorted_List.querySelectorAll(".search-list-basic-inline-sorted ul.list-group-example-html li:not(.list-group-item-muted)"),
+        var filterListBasicSorted_List = sortSearchList( document.querySelector(".filter-list-basic-inline-sorted ul.list-group-example-html") ),
+            filterListBasicSorted_Items = filterListBasicSorted_List.querySelectorAll(".filter-list-basic-inline-sorted ul.list-group-example-html li:not(.list-group-item-muted)"),
             basicSorted_Decorator = function itemDecorator(listItem, listText, inputValue, inputValueIndex) {
                                       listItem.innerHTML = listText.substr(0, inputValueIndex) +
                                                            "<strong class='text-primary'>" +
@@ -209,13 +209,13 @@
                                                            listText.substr(inputValueIndex + inputValue.length);
                                     };
 
-        document.querySelector(".search-list-basic-inline-sorted input[type=text]").onkeyup = function(e) {
+        document.querySelector(".filter-list-basic-inline-sorted input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilter(inputValue, searchListBasicSorted_Items, basicSorted_Decorator, "", "block");
+          filterListAction(inputValue, filterListBasicSorted_Items, basicSorted_Decorator, "", "block");
         }
 
-        document.querySelector(".search-list-basic-inline-sorted input[type=reset]").onclick = function() {
-          searchListFilter("", searchListBasicSorted_Items, basicSorted_Decorator, "", "block");
+        document.querySelector(".filter-list-basic-inline-sorted input[type=reset]").onclick = function() {
+          filterListAction("", filterListBasicSorted_Items, basicSorted_Decorator, "", "block");
         }
       </script>
     </example>
