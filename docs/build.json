@@ -115,6 +115,9 @@
     "filter-lists": [
       "basic-inline",
       "rich-types"
+    ],
+    "collapsible-lists": [
+      "media-list"
     ]
   }
 }
