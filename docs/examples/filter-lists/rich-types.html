@@ -1,9 +1,9 @@
-<p>Search can be applied to any list type and filter down on specific items of text within the list group items.</p>
+<p>Filters can be applied to any list type and filter down on specific items of text within the list group items.</p>
 <div class="row">
   <div class="col-md-6">
     <title>Content</title>
     <example>
-      <div class="search-list-rich-types-content">
+      <div class="filter-list-rich-types-content">
         <div class="container-fluid">
           <br/>
           <form class="input-group search-input" novalidate>
@@ -38,7 +38,7 @@
       </div>
 
       <script>
-        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
+        function filterListAction(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
                 listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
@@ -53,7 +53,7 @@
           }
         }
 
-        var searchListRichContent_Items = document.querySelectorAll(".search-list-rich-types-content ul li"),
+        var filterListRichContent_Items = document.querySelectorAll(".filter-list-rich-types-content ul li"),
             richContent_Decorator = function itemDecorator(listItem, listText, inputValue, inputValueIndex) {
                                       listItem.innerHTML = listText.substr(0, inputValueIndex) +
                                                            "<strong class='text-warning'>" +
@@ -62,13 +62,13 @@
                                                            listText.substr(inputValueIndex + inputValue.length);
                                     };
 
-        document.querySelector(".search-list-rich-types-content input[type=text]").onkeyup = function(e) {
+        document.querySelector(".filter-list-rich-types-content input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilter(inputValue, searchListRichContent_Items, richContent_Decorator, ".username", "block");
+          filterListAction(inputValue, filterListRichContent_Items, richContent_Decorator, ".username", "block");
         }
 
-        document.querySelector(".search-list-rich-types-content input[type=reset]").onclick = function() {
-          searchListFilter("", searchListRichContent_Items, richContent_Decorator, ".username", "block");
+        document.querySelector(".filter-list-rich-types-content input[type=reset]").onclick = function() {
+          filterListAction("", filterListRichContent_Items, richContent_Decorator, ".username", "block");
         }
       </script>
     </example>
@@ -76,7 +76,7 @@
   <div class="col-md-6">
     <title>Media</title>
     <example>
-      <div class="search-list-rich-types-media">
+      <div class="filter-list-rich-types-media">
         <div class="container-fluid">
           <br/>
           <form class="input-group search-input" novalidate>
@@ -121,7 +121,7 @@
       </div>
 
       <script>
-        function searchListFilter(inputValue, listItems, listItemDecorator, querySelector, displayType) {
+        function filterListAction(inputValue, listItems, listItemDecorator, querySelector, displayType) {
           for(var i = 0; i < listItems.length; i++) {
             var listItem = listItems[i],
                 listItemTitle = (querySelector.trim() == "" ? listItem : listItem.querySelector(querySelector)),
@@ -136,7 +136,7 @@
           }
         }
 
-        var searchListRichMedia_Items = document.querySelectorAll(".search-list-rich-types-media ul li"),
+        var filterListRichMedia_Items = document.querySelectorAll(".filter-list-rich-types-media ul li"),
             richMedia_Decorator = function itemDecorator(listItem, listText, inputValue, inputValueIndex) {
                                     listItem.innerHTML = listText.substr(0, inputValueIndex) +
                                                          "<strong class='text-primary'>" +
@@ -145,13 +145,13 @@
                                                          listText.substr(inputValueIndex + inputValue.length);
                                   };
 
-        document.querySelector(".search-list-rich-types-media input[type=text]").onkeyup = function(e) {
+        document.querySelector(".filter-list-rich-types-media input[type=text]").onkeyup = function(e) {
           var inputValue = this.value.toLowerCase().trim();
-          searchListFilter(inputValue, searchListRichMedia_Items, richMedia_Decorator, ".username", "flex");
+          filterListAction(inputValue, filterListRichMedia_Items, richMedia_Decorator, ".username", "flex");
         }
 
-        document.querySelector(".search-list-rich-types-media input[type=reset]").onclick = function() {
-          searchListFilter("", searchListRichMedia_Items, richMedia_Decorator, ".username", "flex");
+        document.querySelector(".filter-list-rich-types-media input[type=reset]").onclick = function() {
+          filterListAction("", filterListRichMedia_Items, richMedia_Decorator, ".username", "flex");
         }
       </script>
     </example>
