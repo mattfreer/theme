@@ -72,7 +72,8 @@
     "list-groups": [
       "basic",
       "badge",
-      "content"
+      "content",
+      "borders"
     ],
     "inline-form-item": [
       "individual",

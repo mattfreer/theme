@@ -32,7 +32,8 @@
 .list-group-item {
   &.collapsible-item {
     padding: 0;
-    border: none;
+    border-top: none;
+    border-bottom: none;
 
     &:hover {
       background-color: transparent;
@@ -50,8 +51,8 @@
     [data-toggle=collapse] {
       padding: @list-item-padding;
       padding-right: @list-item-padding-right + (@indicator-size * 2);
-      border: 1px solid @gray-lighter;
       border-top: none;
+      border-bottom: none;
       position: relative;
 
       &:hover {
@@ -134,7 +135,8 @@
     }
 
     &.active {
-      border-color: @brand-primary;
+      border-top-color: @brand-primary;
+      border-bottom-color: @brand-primary;
       background-color: @brand-primary;
       [data-toggle=collapse] {
         border-bottom: none;

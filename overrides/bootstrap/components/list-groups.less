@@ -1,25 +1,61 @@
 // List groups  ==============================================================
 
-.list-group-item {
-  padding: 8px 15px;
-  margin-bottom: 0px;
-}
-
 .list-group-item-condensed {
   padding: 6px 15px;
 }
 
-.list-group-item {
+.list-group-border-top {
   border-top: 1px solid @gray-lighter;
+}
+
+.list-group-border-bottom {
+  border-bottom: 1px solid @gray-lighter;
+}
+
+.list-group-border-vertical .list-group-item {
+  border-left: 1px solid @gray-lighter;
+  border-right: 1px solid @gray-lighter;
+}
+
+.list-group-border-all {
+  border-top: 1px solid @gray-lighter;
+  border-bottom: 1px solid @gray-lighter;
+
+  .list-group-item {
+    border-left: 1px solid @gray-lighter;
+    border-right: 1px solid @gray-lighter;
+  }
+}
+
+ul.list-group > li > ul li {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.list-group-item {
+  border: none;
+  padding: 8px 15px;
+  margin-bottom: 0px;
 
   &:hover {
     cursor: pointer;
     background-color: @gray-lightest;
   }
+
+  &.list-group-item-borderless {
+    border-top: none !important;
+  }
+
+  &.active {
+    &:hover, &:focus {
+      border-left-color: @gray-lighter;
+      border-right-color: @gray-lighter;
+    }
+  }
 }
 
 .list-group-item:not([style*="display: none"]):not(first-child) ~ .list-group-item {
-  border-top: none;
+  border-top: 1px solid @gray-lighter;
 }
 
 .list-group-item.unselectable {
@@ -50,4 +86,3 @@ a.list-group-item-muted {
     color: @gray-dark;
   }
 }
-
