@@ -83,6 +83,9 @@
       "basic",
       "media-badge"
     ],
+    "grid-row": [
+      "basic"
+    ],
     "media-group-item": [
       "list"
     ],
