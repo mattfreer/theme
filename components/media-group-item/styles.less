@@ -1,56 +1,8 @@
 @media-group-item-padding: 16px;
-@media-content-margin: 15px;
 
 .media-group-item {
   border: none;
   text-decoration: none;
-
-  * {
-    margin: 0;
-  }
-
-  &.media-row, .media-row {
-    .display-flex;
-    .flex(1);
-    .align-items(center);
-    .flex-direction(row);
-
-    & > * {
-      margin-right: @media-content-margin;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &.stretch {
-        .flex(1);
-      }
-    }
-
-    .media-badge {
-      .align-self(flex-start);
-    }
-  }
-
-  .line-normal {
-    margin-bottom: @line-normal-margin-bottom;
-  }
-
-  .line-loose {
-    margin-bottom: @line-loose-margin-bottom;
-  }
-
-  .line-looser {
-    margin-bottom: @line-looser-margin-bottom;
-  }
-
-  .line-tight {
-    margin-bottom: @line-tight-margin-bottom;
-  }
-
-  .line-tighter {
-    margin-bottom: @line-tighter-margin-bottom;
-  }
 }
 
 .list-group-item {

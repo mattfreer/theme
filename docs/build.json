@@ -78,8 +78,11 @@
       "individual",
       "list"
     ],
+    "media-row": [
+      "basic",
+      "media-badge"
+    ],
     "media-group-item": [
-      "individual",
       "list"
     ],
     "dropdown-item": [

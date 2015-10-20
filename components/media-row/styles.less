@@ -1,0 +1,28 @@
+@media-content-margin: 15px;
+
+.media-row {
+  * {
+    margin: 0;
+  }
+
+  .display-flex;
+  .flex(1);
+  .align-items(center);
+  .flex-direction(row);
+
+  & > * {
+    margin-right: @media-content-margin;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.stretch {
+      .flex(1);
+    }
+  }
+
+  .media-badge {
+    .align-self(flex-start);
+  }
+}
