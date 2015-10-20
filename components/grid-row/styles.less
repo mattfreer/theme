@@ -1,0 +1,30 @@
+@cell-margin: 10px;
+
+.grid-row {
+  .display-flex;
+  .align-items(center);
+
+  * {
+    margin: 0;
+  }
+
+  & > * {
+    .flex-grow(1);
+    width: 1%;
+    margin-right: @cell-margin;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:not(.text-left) {
+      text-align: right;
+    }
+
+    &:first-child {
+      &:not(.text-right) {
+        text-align: left;
+      }
+    }
+  }
+}
