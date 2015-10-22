@@ -27,6 +27,20 @@ ul.list-group > li > ul li {
   border-right: none !important;
 }
 
+.list-group {
+  &.list-group-with-indicators {
+    .grid-row, .media-row {
+      padding-right: 36px;
+    }
+
+    .collapsible-item {
+      [data-toggle=collapse] {
+        padding-right: 36px;
+      }
+    }
+  }
+}
+
 .list-group-item {
   border: none;
   padding: 8px 15px;
