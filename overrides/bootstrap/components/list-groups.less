@@ -27,6 +27,20 @@ ul.list-group > li > ul li {
   border-right: none !important;
 }
 
+.list-group {
+  &.list-group-with-indicators {
+    .grid-row, .media-row {
+      padding-right: 36px;
+    }
+
+    .collapsible-item {
+      [data-toggle=collapse] {
+        padding-right: 36px;
+      }
+    }
+  }
+}
+
 .list-group-item {
   border: none;
   padding: 8px 15px;
@@ -45,6 +59,28 @@ ul.list-group > li > ul li {
     &:hover, &:focus {
       border-left-color: @gray-lighter;
       border-right-color: @gray-lighter;
+    }
+  }
+
+  &:last-child {
+    &.line-normal {
+      margin-bottom: @line-normal-margin-bottom;
+    }
+
+    &.line-loose {
+      margin-bottom: @line-loose-margin-bottom;
+    }
+
+    &.line-looser {
+      margin-bottom: @line-looser-margin-bottom;
+    }
+
+    &.line-tight {
+      margin-bottom: @line-tight-margin-bottom;
+    }
+
+    &.line-tighter {
+      margin-bottom: @line-tighter-margin-bottom;
     }
   }
 }

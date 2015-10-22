@@ -1,9 +1,8 @@
-@media-group-item-padding: 16px;
-@list-item-padding: 8px;
+@list-item-padding: 8px 15px;
 @list-item-padding-right: 12px;
 @indicator-size: 7px;
 
-.nested-padding(@base-padding, @increment: 12px) {
+.nested-padding(@base-padding: 15px, @increment: 15px) {
   &.padding-1-left, .padding-1-left {
     padding-left: @base-padding;
   }
@@ -64,7 +63,6 @@
 
     [data-toggle=collapse] {
       padding: @list-item-padding;
-      padding-right: @list-item-padding-right + (@indicator-size * 2);
       border-top: none;
       border-bottom: none;
       position: relative;
@@ -73,7 +71,7 @@
         content: "";
         position: absolute;
         top: 14px;
-        right: 12px;
+        right: 15px;
         width: @indicator-size;
         height: @indicator-size;
         background-color: @brand-primary;
@@ -90,7 +88,7 @@
     }
 
     .list-group-item {
-      .nested-padding(12px);
+      .nested-padding;
     }
 
     & > ul, & > .list-group {
@@ -188,17 +186,6 @@
 
 .media-group-item {
   &.collapsible-item {
-    &.no-indicator {
-      & > [data-toggle=collapse] {
-        padding-right: @media-group-item-padding;
-      }
-    }
-
-    & > [data-toggle=collapse] {
-      padding: @media-group-item-padding;
-      padding-right: @media-group-item-padding + (@indicator-size * 2);
-    }
-
     [data-toggle=collapse] {
       border-left: none;
       border-right: none;
@@ -209,7 +196,7 @@
     }
 
     .media-group-item {
-      .nested-padding(16px);
+      .nested-padding;
     }
 
     & > ul, & > .list-group {
