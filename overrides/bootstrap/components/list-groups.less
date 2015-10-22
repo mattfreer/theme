@@ -61,6 +61,28 @@ ul.list-group > li > ul li {
       border-right-color: @gray-lighter;
     }
   }
+
+  &:last-child {
+    &.line-normal {
+      margin-bottom: @line-normal-margin-bottom;
+    }
+
+    &.line-loose {
+      margin-bottom: @line-loose-margin-bottom;
+    }
+
+    &.line-looser {
+      margin-bottom: @line-looser-margin-bottom;
+    }
+
+    &.line-tight {
+      margin-bottom: @line-tight-margin-bottom;
+    }
+
+    &.line-tighter {
+      margin-bottom: @line-tighter-margin-bottom;
+    }
+  }
 }
 
 .list-group-item:not([style*="display: none"]):not(first-child) ~ .list-group-item {
