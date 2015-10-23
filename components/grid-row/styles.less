@@ -1,5 +1,23 @@
 @cell-margin: 5px;
 
+.text-right {
+  &:not(.text-left):not(.text-center) {
+    text-align: right;
+  }
+}
+
+.text-left {
+  &:not(.text-center):not(.text-right) {
+    text-align: left;
+  }
+}
+
+.text-center {
+  &:not(.text-left):not(.text-right) {
+    text-align: center;
+  }
+}
+
 .grid-row {
   .display-flex;
   .align-items(center);
@@ -10,6 +28,8 @@
 
   & > * {
     .flex-grow(1);
+    .text-right;
+
     width: 1%;
     margin-right: @cell-margin;
 
@@ -17,14 +37,20 @@
       margin-right: 0;
     }
 
-    &:not(.text-left) {
-      text-align: right;
-    }
-
     &:first-child {
-      &:not(.text-right) {
-        text-align: left;
-      }
+      .text-left;
     }
+  }
+
+  &.text-center * {
+    .text-center;
+  }
+
+  &.text-left * {
+    .text-left;
+  }
+
+  &.text-right * {
+    .text-right;
   }
 }
