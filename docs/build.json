@@ -121,6 +121,7 @@
       "rich-types"
     ],
     "collapsible-lists": [
+      "value-list",
       "media-list",
       "grid-list"
     ]
