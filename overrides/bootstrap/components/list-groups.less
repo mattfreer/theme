@@ -29,19 +29,21 @@ ul.list-group > li > ul li {
 
 .list-group {
   &.list-group-with-indicators {
+    @indicator-padding: (@padding-list-item-horizontal * 2) + 6;
+
     .collapsible-item {
       & > .grid-row, & > .media-row {
-        padding-right: 36px;
+        padding-right: @indicator-padding;
       }
     }
 
     .list-group-item:not(.collapsible-item) {
       .grid-row, .media-row {
-        padding-right: 21px;
+        padding-right: @indicator-padding - @padding-list-item-horizontal;
       }
 
       &.grid-row, &.media-row {
-        padding-right: 36px;
+        padding-right: @indicator-padding;
       }
     }
   }
@@ -49,7 +51,7 @@ ul.list-group > li > ul li {
 
 .list-group-item {
   border: none;
-  padding: 8px 15px;
+  padding: @padding-list-item-vertical @padding-list-item-horizontal;
   margin-bottom: 0px;
 
   &:hover {
