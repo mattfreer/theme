@@ -29,12 +29,18 @@ ul.list-group > li > ul li {
 
 .list-group {
   &.list-group-with-indicators {
-    .grid-row, .media-row {
-      padding-right: 36px;
+    .collapsible-item {
+      & > .grid-row, & > .media-row {
+        padding-right: 36px;
+      }
     }
 
-    .collapsible-item {
-      [data-toggle=collapse] {
+    .list-group-item:not(.collapsible-item) {
+      .grid-row, .media-row {
+        padding-right: 21px;
+      }
+
+      &.grid-row, &.media-row {
         padding-right: 36px;
       }
     }

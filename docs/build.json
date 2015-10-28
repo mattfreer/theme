@@ -122,6 +122,7 @@
     ],
     "collapsible-lists": [
       "value-list",
+      "nested-info-list",
       "media-list",
       "grid-list"
     ]
