@@ -1,7 +1,6 @@
-@list-item-padding: 8px 15px;
 @indicator-size: 6px;
 
-.nested-padding(@base-padding: 15px, @increment: 15px) {
+.nested-padding(@base-padding: @padding-list-item-horizontal, @increment: @padding-list-item-horizontal) {
   &.padding-1-left, .padding-1-left {
     padding-left: @base-padding;
   }
@@ -63,7 +62,7 @@
     }
 
     [data-toggle=collapse] {
-      padding: @list-item-padding;
+      padding: @padding-list-item-vertical @padding-list-item-horizontal;
       border-top: none;
       border-bottom: none;
       position: relative;
@@ -72,7 +71,7 @@
         content: "";
         position: absolute;
         top: 14px;
-        right: 15px;
+        right: @padding-list-item-horizontal;
         width: @indicator-size;
         height: @indicator-size;
         background-color: @brand-primary;
@@ -172,6 +171,28 @@
 
     &.active {
       border-bottom: none;
+    }
+  }
+}
+
+.list-group {
+  &.list-group-with-indicators {
+    @indicator-padding: (@padding-list-item-horizontal * 2) + @indicator-size;
+
+    .collapsible-item {
+      & > .grid-row, & > .media-row {
+        padding-right: @indicator-padding;
+      }
+    }
+
+    .list-group-item:not(.collapsible-item) {
+      .grid-row, .media-row {
+        padding-right: @indicator-padding - @padding-list-item-horizontal;
+      }
+
+      &.grid-row, &.media-row {
+        padding-right: @indicator-padding;
+      }
     }
   }
 }

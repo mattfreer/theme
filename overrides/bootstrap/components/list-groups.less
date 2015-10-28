@@ -27,29 +27,9 @@ ul.list-group > li > ul li {
   border-right: none !important;
 }
 
-.list-group {
-  &.list-group-with-indicators {
-    .collapsible-item {
-      & > .grid-row, & > .media-row {
-        padding-right: 36px;
-      }
-    }
-
-    .list-group-item:not(.collapsible-item) {
-      .grid-row, .media-row {
-        padding-right: 21px;
-      }
-
-      &.grid-row, &.media-row {
-        padding-right: 36px;
-      }
-    }
-  }
-}
-
 .list-group-item {
   border: none;
-  padding: 8px 15px;
+  padding: @padding-list-item-vertical @padding-list-item-horizontal;
   margin-bottom: 0px;
 
   &:hover {
