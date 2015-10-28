@@ -19,7 +19,7 @@
     &:first-child {
       display: block;
       float: left;
-      margin-top: 8px;
+      margin-top: @padding-list-item-vertical;
     }
   }
 }
@@ -41,7 +41,8 @@
       color: @gray-darker;
 
       &:first-child {
-        padding: 8px 0 8px 12px;
+        padding: @padding-list-item-vertical @padding-list-item-horizontal;
+        padding-right: 0;
       }
 
       &:hover {
