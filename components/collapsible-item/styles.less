@@ -33,8 +33,11 @@
     border-top: none;
     border-bottom: none;
 
-    &:not(.active) {
-      color: initial;
+    &.active {
+      .list-group-item:not(.active) {
+        .text-status-colors;
+        color: @text-color;
+      }
     }
 
     &:not(.list-group-item-muted):not(.active) {
