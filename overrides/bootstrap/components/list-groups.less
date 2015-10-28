@@ -27,28 +27,6 @@ ul.list-group > li > ul li {
   border-right: none !important;
 }
 
-.list-group {
-  &.list-group-with-indicators {
-    @indicator-padding: (@padding-list-item-horizontal * 2) + 6;
-
-    .collapsible-item {
-      & > .grid-row, & > .media-row {
-        padding-right: @indicator-padding;
-      }
-    }
-
-    .list-group-item:not(.collapsible-item) {
-      .grid-row, .media-row {
-        padding-right: @indicator-padding - @padding-list-item-horizontal;
-      }
-
-      &.grid-row, &.media-row {
-        padding-right: @indicator-padding;
-      }
-    }
-  }
-}
-
 .list-group-item {
   border: none;
   padding: @padding-list-item-vertical @padding-list-item-horizontal;
