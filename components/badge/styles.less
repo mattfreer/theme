@@ -1,5 +1,7 @@
-.badge-style-variant(@background-color) {
-  background-color: @background-color;
+.badge-inverse-style-variant(@color) {
+  border: 1px solid @color;
+  background-color: #fff;
+  color: @color;
 }
 
 .badge-default {
@@ -24,4 +26,29 @@
 
 .badge-danger {
   background-color: @brand-danger;
+}
+
+.badge-default-inverse {
+  .badge-inverse-style-variant(@gray);
+  border-color: @gray-lighter;
+}
+
+.badge-primary-inverse {
+  .badge-inverse-style-variant(@brand-primary);
+}
+
+.badge-success-inverse {
+  .badge-inverse-style-variant(@brand-success);
+}
+
+.badge-info-inverse {
+  .badge-inverse-style-variant(@brand-info);
+}
+
+.badge-warning-inverse {
+  .badge-inverse-style-variant(@brand-warning);
+}
+
+.badge-danger-inverse {
+  .badge-inverse-style-variant(@brand-danger);
 }
