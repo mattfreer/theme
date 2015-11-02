@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 
   var config = {
     aws: grunt.file.readJSON("grunt-aws.json"),
-    version: "0.1.0",
+    version: "0.1.1",
     builddir: 'build',
     watch: {
       files: ['docs/**/*.*', 'overrides/**/*.less', 'components/**/*.less', 'build.less'],
