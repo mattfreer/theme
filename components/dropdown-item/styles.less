@@ -1,5 +1,4 @@
 .dropdown-item {
-
   &:hover {
     background-color: #fff;
     cursor: default;
@@ -22,11 +21,24 @@
       margin-top: @padding-list-item-vertical;
     }
   }
+
+  ul li a {
+    width: 100%;
+    &:hover {
+      background-color: @brand-primary;
+    }
+  }
 }
 
 .list-group-item {
   &.dropdown-item {
     padding: 0;
+
+    ul li a {
+      &:hover {
+        background-color: @brand-primary;
+      }
+    }
 
     .dropdown-toggle {
       float: none;
@@ -68,6 +80,12 @@
             background-color: transparent;
             cursor: default;
           }
+        }
+      }
+
+      ul li a:first-child {
+        &:hover {
+          background-color: @brand-primary;
         }
       }
     }
